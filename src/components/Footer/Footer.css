@@ -1,0 +1,28 @@
+.footer {
+  height: auto;
+  padding: 16px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(84, 68, 52, 1);
+}
+
+.footer.content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 34px;
+}
+
+.content.text {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(190, 212, 164, 1);
+}
