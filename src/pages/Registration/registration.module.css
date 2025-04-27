@@ -9,7 +9,8 @@
 
 .logreg-form {
   padding: 35px 53px;
-  margin-top: 100px;
+  margin-top: 60px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,8 +121,8 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.logreg-button.reg {
-  width: 262px;
+.logreg-button.log {
+  width: 99px;
 }
 
 .login-register.text {

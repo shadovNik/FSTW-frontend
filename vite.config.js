@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: './index.html',
         login: './login.html',
+        registration: './registration.html',
       },
     },
   },

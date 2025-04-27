@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import MainPage from './pages/MainPage/MainPage';
-import Login from './pages/Login/Login'
+import Login from './pages/Login/Login';
+import Registration from './pages/Registration/Registration';
 
 let Component;
 switch (window.location.pathname) {
@@ -11,6 +12,9 @@ switch (window.location.pathname) {
     break;
   case '/login.html':
     Component = Login;
+    break;
+  case '/registration.html':
+    Component = Registration;
     break;
   default:
     Component = MainPage;
