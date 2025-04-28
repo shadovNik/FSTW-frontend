@@ -27,9 +27,6 @@ export default function NavigationMenu({ onClose }) {
 
   return (
     <div className={styles.menu} ref={menuRef}>
-      <button className={styles['close-button']} onClick={onClose}>
-        ×
-      </button>
       <ul className={styles['menu-links']}>
         <li>
           <a href="/" className={styles['menu-link']} onClick={onClose}>

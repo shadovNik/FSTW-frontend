@@ -10,18 +10,16 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  transform: translateY(-10px);
+  opacity: 0;
+  animation: slideIn 0.4s forwards;
 }
 
-.close-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  padding: 5px;
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .close-button:hover {
