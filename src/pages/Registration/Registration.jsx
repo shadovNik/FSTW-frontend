@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './registration.module.css';
 import Header from '../../components/Header/Header';
 
@@ -6,11 +7,11 @@ export default function Registration() {
     <>
       <Header
         linksContent={
-          <a href="/login.html" className={styles['logreg-href']}>
+          <Link to="/login" className={styles['logreg-href']}>
             <div className={`${styles['logreg-button']} ${styles.log}`}>
               <p className={`${styles['login-register']} ${styles.text}`}>Войти</p>
             </div>
-          </a>
+          </Link>
         }
       />
       <main className={`${styles.main} ${styles.registration}`}>
@@ -20,12 +21,45 @@ export default function Registration() {
             <div className={styles['context-part']}>
               <input
                 type="text"
-                pattern="[A-Za-zА-Яа-я0-9.-_]{2,}"
+                pattern="[A-Za-zА-Яа-яЁё]{2,}"
                 className={styles['part-field']}
-                placeholder="Логин"
+                placeholder="Фамилия"
                 required
-                id="loginLog"
-                name="loginLog"
+                id="surname"
+                name="surname"
+              />
+            </div>
+            <div className={styles['context-part']}>
+              <input
+                type="text"
+                pattern="[A-Za-zА-Яа-яЁё]{2,}"
+                className={styles['part-field']}
+                placeholder="Имя"
+                required
+                id="name"
+                name="name"
+              />
+            </div>
+            <div className={styles['context-part']}>
+              <input
+                type="text"
+                pattern="[A-Za-zА-Яа-яЁё]{2,}"
+                className={styles['part-field']}
+                placeholder="Отчество"
+                required
+                id="midname"
+                name="midname"
+              />
+            </div>
+            <div className={styles['context-part']}>
+              <input
+                type="text"
+                pattern="\d{2}\.\d{2}\.\d{4}"
+                className={styles['part-field']}
+                placeholder="Дата рождения"
+                required
+                id="birthdate"
+                name="birthdate"
               />
             </div>
             <div className={styles['context-part']}>

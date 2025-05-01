@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './login.module.css';
 import Header from '../../components/Header/Header';
 
@@ -6,11 +7,11 @@ export default function Login() {
     <>
       <Header
         linksContent={
-          <a href="/registration.html" className={styles['logreg-href']}>
+          <Link to="/registration" className={styles['logreg-href']}>
             <div className={`${styles['logreg-button']} ${styles.reg}`}>
               <p className={`${styles['login-register']} ${styles.text}`}>Зарегистрироваться</p>
             </div>
-          </a>
+          </Link>
         }
       />
       <main className={`${styles.main} ${styles.login}`}>
@@ -39,7 +40,7 @@ export default function Login() {
             </div>
           </div>
           <button
-            type="submit"
+            type="button"
             className={styles['form-submit']}
           >
             Далее

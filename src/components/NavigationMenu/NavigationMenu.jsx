@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './NavigationMenu.module.css';
 
 export default function NavigationMenu({ onClose }) {
@@ -29,24 +30,25 @@ export default function NavigationMenu({ onClose }) {
     <div className={styles.menu} ref={menuRef}>
       <ul className={styles['menu-links']}>
         <li>
-          <a href="/" className={styles['menu-link']} onClick={onClose}>
+          <Link to="/main" className={styles['menu-link']} onClick={onClose}>
             Главная
-          </a>
+          </Link>
         </li>
+        {/* Позже добавить проверку: {isAuthenticated && (...)} */}
         <li>
-          <a href="" className={styles['menu-link']} onClick={onClose}>
+          <Link to="/internships" className={styles['menu-link']} onClick={onClose}>
             Каталог стажировок
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="" className={styles['menu-link']} onClick={onClose}>
+          <Link to="/chatbot" className={styles['menu-link']} onClick={onClose}>
             Чат-бот
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="" className={styles['menu-link']} onClick={onClose}>
+          <Link to="/contacts" className={styles['menu-link']} onClick={onClose}>
             Контакты
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

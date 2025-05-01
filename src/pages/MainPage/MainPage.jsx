@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './main-page.css';
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header';
@@ -9,16 +10,16 @@ export default function MainPage() {
       <Header
         linksContent={
           <>
-            <a href="/registration.html" className={styles['logreg-href']}>
+            <Link to="/registration" className={styles['logreg-href']}>
               <div className={`${styles['logreg-button']} ${styles.reg}`}>
                 <p className={`${styles['login-register']} ${styles.text}`}>Зарегистрироваться</p>
               </div>
-            </a>
-            <a href="/login.html" className={styles['logreg-href']}>
+            </Link>
+            <Link to="/login" className={styles['logreg-href']}>
               <div className={`${styles['logreg-button']} ${styles.log}`}>
                 <p className={`${styles['login-register']} ${styles.text}`}>Войти</p>
               </div>
-            </a>
+            </Link>
           </>
         }
       />

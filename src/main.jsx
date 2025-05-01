@@ -1,27 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage/MainPage';
 import Login from './pages/Login/Login';
 import Registration from './pages/Registration/Registration';
 
-let Component;
-switch (window.location.pathname) {
-  case '/':
-  case '/index.html':
-    Component = MainPage;
-    break;
-  case '/login.html':
-    Component = Login;
-    break;
-  case '/registration.html':
-    Component = Registration;
-    break;
-  default:
-    Component = MainPage;
-}
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Component />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/main" element={<MainPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<Registration />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );

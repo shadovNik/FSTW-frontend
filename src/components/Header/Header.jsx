@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import NavigationMenu from '../NavigationMenu/NavigationMenu';
 
@@ -12,19 +13,19 @@ export default function Header({ linksContent = null }) {
   return (
     <>
       <header className={`${styles.header} main-page`}>
-        <a
+        <Link
+          to="/main"
           className={styles['fstw-logo']}
-          href="/index.html"
           onClick={(e) => {
-            e.preventDefault();
-            toggleMenu();
+              e.preventDefault();
+              toggleMenu();
           }}
         >
           <img src="/img/fstw.svg" width="180" height="45" alt="Логотип персонального кабинета" />
-        </a>
+        </Link>
         {linksContent && <div className={styles['login-register']}>{linksContent}</div>}
       </header>
-      {isMenuOpen && <NavigationMenu onClose={ () => setIsMenuOpen(false) } />}
+      {isMenuOpen && <NavigationMenu onClose={() => setIsMenuOpen(false)} />}
     </>
   );
 }
