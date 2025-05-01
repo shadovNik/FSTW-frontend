@@ -1,8 +1,29 @@
 import { Link } from 'react-router-dom';
-import styles from './registration.module.css';
+import styles from './Registration.module.css';
 import Header from '../../components/Header/Header';
 
 export default function Registration() {
+
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+
+    const formData = new FormData(evt.target);
+
+    try {
+      const response = await fetch('http://localhost:80/api/register', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        console.log(response);
+      }
+    } catch {
+      console.log('Что-то не так');
+    }
+
+  };
+
   return (
     <>
       <Header
@@ -15,51 +36,18 @@ export default function Registration() {
         }
       />
       <main className={`${styles.main} ${styles.registration}`}>
-        <form className={styles['logreg-form']}>
+        <form className={styles['logreg-form']} onSubmit={handleSubmit}>
           <p className={styles['form-header']}>Регистрация</p>
           <div className={styles['form-context']}>
             <div className={styles['context-part']}>
               <input
                 type="text"
-                pattern="[A-Za-zА-Яа-яЁё]{2,}"
+                pattern="[A-Za-zА-Яа-я0-9.-_]{2,}"
                 className={styles['part-field']}
-                placeholder="Фамилия"
+                placeholder="Логин"
                 required
-                id="surname"
-                name="surname"
-              />
-            </div>
-            <div className={styles['context-part']}>
-              <input
-                type="text"
-                pattern="[A-Za-zА-Яа-яЁё]{2,}"
-                className={styles['part-field']}
-                placeholder="Имя"
-                required
-                id="name"
-                name="name"
-              />
-            </div>
-            <div className={styles['context-part']}>
-              <input
-                type="text"
-                pattern="[A-Za-zА-Яа-яЁё]{2,}"
-                className={styles['part-field']}
-                placeholder="Отчество"
-                required
-                id="midname"
-                name="midname"
-              />
-            </div>
-            <div className={styles['context-part']}>
-              <input
-                type="text"
-                pattern="\d{2}\.\d{2}\.\d{4}"
-                className={styles['part-field']}
-                placeholder="Дата рождения"
-                required
-                id="birthdate"
-                name="birthdate"
+                id="Login"
+                name="Login"
               />
             </div>
             <div className={styles['context-part']}>
@@ -68,8 +56,8 @@ export default function Registration() {
                 className={styles['part-field']}
                 placeholder="Адрес электронной почты"
                 required
-                id="email"
-                name="email"
+                id="Email"
+                name="Email"
               />
             </div>
             <div className={styles['context-part']}>
@@ -78,8 +66,8 @@ export default function Registration() {
                 className={styles['part-field']}
                 placeholder="Пароль"
                 required
-                id="password"
-                name="password"
+                id="Password"
+                name="Password"
               />
             </div>
             <div className={styles['context-part']}>
@@ -88,8 +76,8 @@ export default function Registration() {
                 className={styles['part-field']}
                 placeholder="Подтверждение пароля"
                 required
-                id="password-confirm"
-                name="password-confirm"
+                id="PasswordRepeat"
+                name="PasswordRepeat"
               />
             </div>
           </div>

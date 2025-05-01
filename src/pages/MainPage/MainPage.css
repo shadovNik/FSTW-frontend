@@ -6,6 +6,47 @@ body {
   background-repeat: no-repeat;
 }
 
+.logreg-href {
+  text-decoration: none;
+}
+
+.logreg-button {
+  display: flex;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.logreg-button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logreg-button:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logreg-button.log {
+  width: 99px;
+}
+
+.logreg-button.reg {
+  width: 262px;
+}
+
+.login-register.text {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
 .main {
   margin: 150px 0;
   margin-left: 416px;

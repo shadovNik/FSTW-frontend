@@ -1,8 +1,28 @@
 import { Link } from 'react-router-dom';
-import styles from './login.module.css';
+import styles from './Login.module.css';
 import Header from '../../components/Header/Header';
 
 export default function Login() {
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+
+    const formData = new FormData(evt.target);
+
+    try {
+      const response = await fetch('http://localhost:80/api/login', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        console.log(response);
+      }
+    } catch {
+      console.log('Что-то не работает');
+    }
+
+  };
+
   return (
     <>
       <Header
@@ -15,17 +35,17 @@ export default function Login() {
         }
       />
       <main className={`${styles.main} ${styles.login}`}>
-        <form className={styles['logreg-form']}>
+        <form className={styles['logreg-form']} onSubmit={handleSubmit}>
           <p className={styles['form-header']}>Вход</p>
           <div className={styles['form-context']}>
             <div className={styles['context-part']}>
               <input
-                type="email"
+                type="text"
                 className={styles['part-field']}
-                placeholder="Адрес электронной почты"
+                placeholder="Логин"
                 required
-                id="email"
-                name="email"
+                id="login"
+                name="login"
               />
             </div>
             <div className={styles['context-part']}>
@@ -40,7 +60,7 @@ export default function Login() {
             </div>
           </div>
           <button
-            type="button"
+            type="submit"
             className={styles['form-submit']}
           >
             Далее

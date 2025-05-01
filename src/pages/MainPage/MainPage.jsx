@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import './main-page.css';
+import './MainPage.css';
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header';
-import styles from '../../components/Header/Header.module.css';
 
 export default function MainPage() {
   return (
@@ -10,14 +9,14 @@ export default function MainPage() {
       <Header
         linksContent={
           <>
-            <Link to="/registration" className={styles['logreg-href']}>
-              <div className={`${styles['logreg-button']} ${styles.reg}`}>
-                <p className={`${styles['login-register']} ${styles.text}`}>Зарегистрироваться</p>
+            <Link to="/registration" className="logreg-href">
+              <div className="logreg-button reg">
+                <p className="login-register text">Зарегистрироваться</p>
               </div>
             </Link>
-            <Link to="/login" className={styles['logreg-href']}>
-              <div className={`${styles['logreg-button']} ${styles.log}`}>
-                <p className={`${styles['login-register']} ${styles.text}`}>Войти</p>
+            <Link to="/login" className="logreg-href">
+              <div className="logreg-button log">
+                <p className="login-register text">Войти</p>
               </div>
             </Link>
           </>

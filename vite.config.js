@@ -7,11 +7,17 @@ export default defineConfig({
     port: 5173,
   },
   plugins: [react()],
+  base: '/',
   build: {
+    outDir: 'dist',
     rollupOptions: {
       input: {
         main: './index.html',
       },
     },
+  },
+  preview: {
+    // Настройка для npm run preview
+    historyApiFallback: true, // Возвращать index.html для всех маршрутов
   },
 });
