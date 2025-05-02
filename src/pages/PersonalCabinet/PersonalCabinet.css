@@ -1,0 +1,313 @@
+.logregHref {
+  text-decoration: none;
+}
+
+.logregButton {
+  display: flex;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.logregButton:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logregButton:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logregButton.logout {
+  width: 99px;
+}
+
+.loginRegister {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+.logoutButton {
+  border: none;
+  width: 99px;
+  display: flex;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+.logoutButton:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logoutButton:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main.pers-cabinet {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/pers-cabinet-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-content.pers-cabinet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 79px;
+  margin: 100px 0;
+}
+
+.pers-info {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  width: 700px;
+}
+
+.person {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  padding: 16px 23px;
+  border-radius: 20px;
+  background-color: rgba(196, 148, 92, 0.5);
+}
+
+.person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.person-name {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: black;
+  text-align: center;
+}
+
+.person-city {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(89, 68, 33, 1);
+  text-align: right;
+}
+
+.person-about {
+  padding: 15px 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(196, 148, 92, 0.5);
+  border-radius: 15px;
+}
+
+.person-about.item {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: none;
+}
+
+.item-name {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: black;
+}
+
+.item-description {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(89, 68, 33, 1);
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.skillsBlock {
+  padding: 15px 23px;
+  width: 654px;
+  min-height: 110px;
+  border-radius: 15px;
+  background-color: rgba(196, 148, 92, 0.5);
+}
+
+.skillsInfo {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: black;
+}
+
+.resumes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.head {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: black;
+}
+
+.resumes-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+/* .resume.full {
+  display: none;
+} */
+
+.empty-list {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(89, 68, 33, 1);
+}
+
+.resume {
+  width: 627px;
+  padding: 15px 23px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(196, 148, 92, 0.5);
+  border-radius: 15px;
+}
+
+.resume-header {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: black;
+}
+
+.resume-href {
+  text-decoration: none;
+}
+
+.resume-more {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(89, 68, 33, 1);
+}
+
+.resume-more:hover {
+  color: rgba(89, 68, 33, 0.7);
+}
+
+.resume-more:active {
+  color: rgba(89, 68, 33, 0.4);
+}
+
+.resumes-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resume-button {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(84, 68, 52, 1);
+  background: none;
+  border: none;
+}
+
+.resume-button:hover {
+  color: rgba(84, 68, 52, 0.7);
+}
+
+.resume-button:active {
+  color: rgba(84, 68, 52, 0.4);
+}

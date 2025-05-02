@@ -25,7 +25,7 @@ export default function MainPage() {
       <main className="main main-page">
         <div className="main-content main-page">
           <div className="assistant">
-            <p className="assistant header">Стажировки УрФУ х AI</p>
+            <p className="assistant header">IT-Стажировки | AI</p>
             <div className="assistant search">
               <input type="text" className="search-input" placeholder="Ищи стажировку здесь!" />
             </div>

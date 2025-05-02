@@ -1,50 +1,9 @@
-.logreg-href {
-  text-decoration: none;
-}
-
-.logreg-button {
-  display: flex;
-  height: 60px;
-  border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.6);
-  align-items: center;
-  justify-content: center;
-}
-
-.logreg-button:hover {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.logreg-button:active {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.logreg-button.log {
-  width: 99px;
-}
-
-.logreg-button.reg {
-  width: 262px;
-}
-
-.login-register.text {
-  margin: 0;
-  padding: 0;
-  font-family: 'Exo 2';
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  color: rgba(255, 255, 255, 1);
-  text-decoration: none;
-}
-
 body {
   margin: 0;
   padding: 0;
 }
 
-.main.main-page {
+.main.mainLogged {
   margin: 0;
   padding: 150px 0;
   padding-left: 416px;
@@ -52,12 +11,12 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  background-image: url('/img/bg.png');
+  background-image: url('/img/main-logged-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.main-content.main-page {
+.mainContent {
   display: flex;
   flex-direction: column;
   gap: 82px;
@@ -70,7 +29,7 @@ body {
   gap: 32px;
 }
 
-.assistant.header {
+.assistantHeader {
   margin: 0;
   padding: 0;
   font-family: 'Exo 2';
@@ -81,7 +40,7 @@ body {
   color: rgba(255, 248, 241, 1);
 }
 
-.search-input {
+.searchInput {
   width: 648px;
   height: 59px;
   display: flex;
@@ -102,35 +61,18 @@ body {
   color: rgba(195, 195, 180, 1);
 }
 
-.search-input::placeholder {
+.searchInput::placeholder {
   color: rgba(177, 175, 162, 0.8);
 }
 
-.search.buttons {
-  margin-right: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 13px;
-}
-
-.search-href {
-  text-decoration: none;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.assistant-description {
+.assistantDescription {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 564px;
+  width: 648px;
 }
 
-.assistant-description.header {
+.assistantDescriptionHeader {
   margin: 0;
   padding: 0;
   font-family: 'Exo 2';
@@ -141,7 +83,7 @@ body {
   color: rgba(255, 248, 241, 1);
 }
 
-.assistant-description.description {
+.assistantDescriptionDescription {
   margin: 0;
   padding: 0;
   font-family: 'Exo 2';
@@ -152,25 +94,49 @@ body {
   color: rgba(255, 255, 255, 1);
 }
 
-.footer {
-  height: auto;
-  padding: 16px 30px;
+.aD {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(84, 68, 52, 1);
+  flex-direction: column;
+  gap: 16px;
 }
 
-.footer.content {
+.aDHeader {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: row;
-  gap: 34px;
+  font-family: 'Exo 2';
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 248, 241, 1);
 }
 
-.content.text {
+.logregHref {
+  text-decoration: none;
+}
+
+.logregButton {
+  display: flex;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.logregButton:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logregButton:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logregButton.persCab {
+  width: 220px;
+}
+
+.loginRegister {
   margin: 0;
   padding: 0;
   font-family: 'Exo 2';
@@ -178,5 +144,6 @@ body {
   font-size: 24px;
   line-height: 100%;
   letter-spacing: 0%;
-  color: rgba(190, 212, 164, 1);
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
 }

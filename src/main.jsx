@@ -6,6 +6,7 @@ import MainLogged from './pages/MainLogged/MainLogged';
 import Login from './pages/Login/Login';
 import Registration from './pages/Registration/Registration';
 import NotFound from './pages/NotFound/NotFound';
+import PersonalCabinet from './pages/PersonalCabinet/PersonalCabinet';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/logged" element={<MainLogged />} />
+        <Route path="/pC" element={<PersonalCabinet />} />
         <Route path="*" element={<NotFound />} /> {/* 404 для всех остальных */}
       </Routes>
     </BrowserRouter>

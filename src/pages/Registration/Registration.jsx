@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Registration.module.css';
 import Header from '../../components/Header/Header';
 
 export default function Registration() {
+  const navigate = useNavigate();
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -14,6 +15,10 @@ export default function Registration() {
         method: 'POST',
         body: formData,
       });
+
+      if (response.ok) {
+        await navigate("/login");
+      }
 
       if (!response.ok) {
         console.log(response);
