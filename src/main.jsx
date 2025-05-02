@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/logged" element={<MainLogged />} />
-        <Route path="/pC" element={<PersonalCabinet />} />
+        <Route path="/pc" element={<PersonalCabinet />} />
         <Route path="*" element={<NotFound />} /> {/* 404 для всех остальных */}
       </Routes>
     </BrowserRouter>

@@ -9,7 +9,7 @@ export default function MainLogged() {
       <Header
         linksContent={
           <>
-            <Link to="/" className={styles.logregHref}>
+            <Link to="/pc" className={styles.logregHref}>
               <div className={`${styles.logregButton} ${styles.persCab}`}>
                 <p className={`${styles.loginRegister} ${styles.text}`}>Личный кабинет</p>
               </div>

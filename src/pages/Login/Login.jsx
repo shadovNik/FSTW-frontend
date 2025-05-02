@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import Header from '../../components/Header/Header';
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const handleSubmit = async (evt) => {
     evt.preventDefault();
 
@@ -13,6 +15,10 @@ export default function Login() {
         method: 'POST',
         body: formData,
       });
+
+      if (response.ok) {
+        await navigate("/pc");
+      }
 
       if (!response.ok) {
         console.log(response);
