@@ -22,9 +22,7 @@ export default function Registration() {
         navigate("/login");
       } else {
         const data = await response.json();
-        for (let key in data[0]) {
-          setError(data[0][key]);
-        }
+          setError(data[0].Error);
       }
     } catch {
       setError('Что-то пошло не так. Попробуйте ещё раз');

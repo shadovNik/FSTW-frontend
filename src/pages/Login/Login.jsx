@@ -27,9 +27,7 @@ export default function Login() {
         localStorage.setItem('isAuth', true);
         navigate("/pc");
       } else {
-        for (let key in data[0]) {
-          setError(data[0][key]);
-        }
+        setError(data[0].Error);
       }
     } catch {
       console.log('Что-то пошло не так. Попробуйте ещё раз');
