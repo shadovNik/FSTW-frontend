@@ -30,9 +30,6 @@ export default function Login() {
         for (let key in data[0]) {
           setError(data[0][key]);
         }
-        // for (let key in data[0]) {
-        //   console.log(data[0][key]);
-        // }
       }
     } catch {
       console.log('Что-то пошло не так. Попробуйте ещё раз');

@@ -18,13 +18,10 @@ export default function Registration() {
         body: formData,
       });
 
-      const data = await response.json();
-      console.log(data);
-      console.log(data[0]);
-
       if (response.ok) {
         navigate("/login");
       } else {
+        const data = await response.json();
         for (let key in data[0]) {
           setError(data[0][key]);
         }
