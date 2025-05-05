@@ -1,12 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import Header from '../../components/Header/Header';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
 export default function Login() {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -26,10 +27,15 @@ export default function Login() {
         localStorage.setItem('isAuth', true);
         navigate("/pc");
       } else {
-        console.log(data.message);
+        for (let key in data[0]) {
+          setError(data[0][key]);
+        }
+        // for (let key in data[0]) {
+        //   console.log(data[0][key]);
+        // }
       }
     } catch {
-      console.log('Что-то не работает');
+      console.log('Что-то пошло не так. Попробуйте ещё раз');
     }
 
   };
@@ -69,6 +75,7 @@ export default function Login() {
                 name="password"
               />
             </div>
+            {error && <p className={styles['loginError']}>{error}</p>}
           </div>
           <button
             type="submit"

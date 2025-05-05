@@ -1,9 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Registration.module.css';
 import Header from '../../components/Header/Header';
+import { useState } from 'react';
 
 export default function Registration() {
   const navigate = useNavigate();
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -16,15 +18,19 @@ export default function Registration() {
         body: formData,
       });
 
+      const data = await response.json();
+      console.log(data);
+      console.log(data[0]);
+
       if (response.ok) {
         navigate("/login");
-      }
-
-      if (!response.ok) {
-        console.log(response);
+      } else {
+        for (let key in data[0]) {
+          setError(data[0][key]);
+        }
       }
     } catch {
-      console.log('Что-то не так');
+      setError('Что-то пошло не так. Попробуйте ещё раз');
     }
 
   };
@@ -85,6 +91,7 @@ export default function Registration() {
                 name="PasswordRepeat"
               />
             </div>
+            {error && <p className={styles['regError']}>{error}</p>}
           </div>
           <button type="submit" className={styles['form-submit']}>
             Далее

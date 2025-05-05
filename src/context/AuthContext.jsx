@@ -8,6 +8,7 @@ export function AuthProvider ({ children }) {
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
     if (token) {
+      localStorage.setItem('accessToken', token);
       setIsAuth(true);
     }
   }, []);
