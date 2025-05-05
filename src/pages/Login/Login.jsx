@@ -1,9 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import Header from '../../components/Header/Header';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -16,12 +19,14 @@ export default function Login() {
         body: formData,
       });
 
-      if (response.ok) {
-        await navigate("/pc");
-      }
+      const data = await response.json();
 
-      if (!response.ok) {
-        console.log(response);
+      if (response.ok) {
+        login(data.accessToken);
+        localStorage.setItem('isAuth', true);
+        navigate("/pc");
+      } else {
+        console.log(data.message);
       }
     } catch {
       console.log('Что-то не работает');

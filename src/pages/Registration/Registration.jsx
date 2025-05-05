@@ -17,7 +17,7 @@ export default function Registration() {
       });
 
       if (response.ok) {
-        await navigate("/login");
+        navigate("/login");
       }
 
       if (!response.ok) {

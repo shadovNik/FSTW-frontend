@@ -1,9 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NavigationMenu.module.css';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function NavigationMenu({ onClose }) {
   const menuRef = useRef(null);
+  const { isAuth } = useContext(AuthContext);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -34,19 +36,21 @@ export default function NavigationMenu({ onClose }) {
             Главная
           </Link>
         </li>
-        {/* Позже добавить проверку: {isAuthenticated && (...)} */}
         <li>
-          <Link to="/internships" className={styles['menu-link']} onClick={onClose}>
+          <Link to="" className={styles['menu-link']} onClick={onClose}>
             Каталог стажировок
           </Link>
         </li>
+        {isAuth && (
+          <li>
+            <Link to="" className={styles['menu-link']} onClick={onClose}>
+              Чат-бот
+            </Link>
+          </li>
+        )}
         <li>
-          <Link to="/chatbot" className={styles['menu-link']} onClick={onClose}>
-            Чат-бот
-          </Link>
-        </li>
-        <li>
-          <Link to="/contacts" className={styles['menu-link']} onClick={onClose}>
+
+          <Link to="" className={styles['menu-link']} onClick={onClose}>
             Контакты
           </Link>
         </li>
