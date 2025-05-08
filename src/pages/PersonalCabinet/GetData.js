@@ -10,14 +10,18 @@ async function loadData() {
   }
 }
 
+function reformatDateOfBirth(date) {
+  return date.slice(3, 5) + '.' + date.slice(0, 2) + '.' + date.slice(6, 10)
+}
+
 function renderData() {
   if (!apiData) return;
 
-  document.getElementById('FLname').textContent = apiData.firstName + ' ' + apiData.lastName;
+  document.getElementById('FLname').textContent = apiData.lastName + ' ' + apiData.firstName;
   document.getElementById('middleName').textContent = apiData.middleName;
 
   document.getElementById('phoneNumber').textContent = apiData.phoneNumber;
-  document.getElementById('dateOfBirth').textContent = apiData.dateOfBirth.slice(0, 10);
+  document.getElementById('dateOfBirth').textContent = reformatDateOfBirth(apiData.dateOfBirth);
   document.getElementById('gender').textContent = apiData.gender;
 
   document.getElementById('vk').textContent = apiData.vk;
