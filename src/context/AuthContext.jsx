@@ -4,13 +4,14 @@ export const AuthContext = createContext();
 
 export function AuthProvider ({ children }) {
   const [isAuth, setIsAuth] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
     if (token) {
-      localStorage.setItem('accessToken', token);
       setIsAuth(true);
     }
+    setIsLoading(false);
   }, []);
 
   const login = (token) => {
@@ -24,7 +25,7 @@ export function AuthProvider ({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ isAuth, login, logout }}>
+    <AuthContext.Provider value={{ isAuth, isLoading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

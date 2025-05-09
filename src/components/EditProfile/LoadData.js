@@ -2,9 +2,7 @@ let apiData;
 
 export async function loadData() {
   try {
-    const response = await fetch(
-      "http://localhost:80/api/api/personal_cabinet/all_info"
-    );
+    const response = await fetch("http://localhost:80/api/api/personal_cabinet/all_info");
     apiData = await response.json();
     renderData();
   } catch (error) {

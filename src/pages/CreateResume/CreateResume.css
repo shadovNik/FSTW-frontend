@@ -1,0 +1,162 @@
+.logregHref {
+  text-decoration: none;
+}
+
+.logregButton {
+  display: flex;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.logregButton:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logregButton:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logregButton.persCab {
+  width: 220px;
+}
+
+.loginRegister {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main.resumeCreator {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/resume-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.resumeCreatorBlock {
+  margin: 105.9px 0;
+  width: 564px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.blockPart.CR {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.partName.CR {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 100%;
+  color: black;
+}
+
+.partContent.CR {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.partContentDate {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+.dateExtra {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 100%;
+  color: rgba(84, 68, 52, 0.5);
+}
+
+.partContentInput {
+  width: 544px;
+  height: 39px;
+  padding: 5px 0;
+  border: none;
+  background: none;
+  border-radius: 10px;
+  background-color: rgba(84, 68, 52, 0.2);
+  text-align: center;
+
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  color: black;
+}
+
+.partContentInput.date {
+  width: 265px;
+}
+
+.partContentInput.level {
+  height: 49px;
+}
+
+.partContentInput::placeholder {
+  color: rgba(45, 60, 28, 0.5);
+}
+
+.partContentInput:focus {
+  outline: 2px solid black;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.saveResume {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 1);
+
+  border: none;
+  background: none;
+}
+
+.saveResume:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.saveResume:active {
+  color: rgba(0, 0, 0, 0.4);
+}

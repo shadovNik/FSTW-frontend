@@ -19,6 +19,10 @@ export default function PersonalCabinet() {
     navigate("/main");
   }
 
+  const handleCreateResumeClick = () => {
+    navigate("/create");
+  }
+
   const toggleEdit = () => {
     setIsEditOpen((prev) => !prev);
   };
@@ -109,7 +113,7 @@ export default function PersonalCabinet() {
               </div>
             </div>
             <div className="resumes-buttons">
-              <button type="button" className="resume-button create">
+              <button type="button" className="resume-button create" onClick={handleCreateResumeClick}>
                 Создать резюме
               </button>
               <button type="button" className="resume-button upload">

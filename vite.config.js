@@ -17,7 +17,6 @@ export default defineConfig({
     },
   },
   preview: {
-    // Настройка для npm run preview
-    historyApiFallback: true, // Возвращать index.html для всех маршрутов
+    historyApiFallback: true,
   },
 });
