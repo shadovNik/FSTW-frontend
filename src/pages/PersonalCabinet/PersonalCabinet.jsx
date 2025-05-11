@@ -21,6 +21,25 @@ export default function PersonalCabinet() {
 
   const handleCreateResumeClick = () => {
     navigate("/create");
+
+    async function fetchResumeId() {
+      try {
+        const response = await fetch('http://localhost:80/api/api/resume_editor/init', {
+          method: 'POST',
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          localStorage.setItem('resumeID', data);
+        } else {
+          console.error(data[0].Error);
+        }
+      } catch {
+        alert('Что-то пошло не так. Попробуйте перезагрузить страницу');
+      }
+    }
+
+    fetchResumeId();
   }
 
   const toggleEdit = () => {

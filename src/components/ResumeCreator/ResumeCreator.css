@@ -1,0 +1,42 @@
+.main.resumeCreator {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/resume-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.resumeCreatorBlock {
+  margin: 105.9px 0;
+  width: 564px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.saveResume {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 1);
+
+  border: none;
+  background: none;
+}
+
+.saveResume:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.saveResume:active {
+  color: rgba(0, 0, 0, 0.4);
+}

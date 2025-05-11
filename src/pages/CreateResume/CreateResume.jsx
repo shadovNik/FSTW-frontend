@@ -1,74 +1,65 @@
 import "./CreateResume.css";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-
+import ResumeCreator from "../../components/ResumeCreator/ResumeCreator";
+import EducationFormContent from "../../components/ResumeCreator/FormContents/EducationFormContent";
+import EducationSubmit from "../../components/ResumeCreator/FormContents/EducationSubmit"
+import ExperienceFormContent from "../../components/ResumeCreator/FormContents/ExperienceFormContent";
+import ExperienceSubmit from "../../components/ResumeCreator/FormContents/ExperienceSubmit"
+import ProjectsFormContent from "../../components/ResumeCreator/FormContents/ProjectsFormContent";
+import ProjectsSubmit from "../../components/ResumeCreator/FormContents/ProjectsSubmit"
+import SkillsFormContent from "../../components/ResumeCreator/FormContents/SkillsFormContent";
+import SkillsSubmit from "../../components/ResumeCreator/FormContents/SkillsSubmit"
+import AchievementsFormContent from "../../components/ResumeCreator/FormContents/AchievementsFormContent";
+import AchievementsSubmit from "../../components/ResumeCreator/FormContents/AchievementsSubmit"
+import AboutAndHobbiesFormContent from "../../components/ResumeCreator/FormContents/AboutAndHobbiesFormContent";
+import AboutAndHobbiesSubmit from "../../components/ResumeCreator/FormContents/AboutAndHobbiesSubmit"
 
 export default function CreateResume() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [resumeID, setResumeID] = useState();
+  const [pageID, setPageID] = useState(0);
 
-  useEffect(() => {
-    async function fetchResumeId() {
-      try {
-        const response = await fetch('http://localhost:80/api/api/resume_editor/init', {
-          method: 'POST',
-        });
-
-        const data = await response.json();
-        if (response.ok) {
-          setResumeID(data);
-        } else {
-          console.error(data[0].Error);
-        }
-      } catch {
-        alert('Что-то пошло не так. Попробуйте перезагрузить страницу');
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchResumeId();
-  }, [])
-
-  if (isLoading) {
-    return <div>Загрузка...</div>;
+  const handleSuccess = () => {
+    setPageID((prev) => Math.min(prev + 1, 5));
   }
 
-  const handleSubmit = async (evt) => {
-    evt.preventDefault();
+  const handleBackButtonClick = () => {
+    setPageID((prev) => Math.min(prev - 1, 1));
+  }
 
-    var object = {};
+  let submitHandler;
+  let formContent;
 
-    const formData = new FormData(evt.target);
-    formData.forEach(function(value, key) {
-      object[key] = value;
-    });
-
-    object.startYear = Number(object.startYear);
-    object.endYear = Number(object.endYear);
-
-    var dataArray = []
-    dataArray.push(object);
-
-    try {
-      const response = await fetch(`http://localhost:80/api/api/resume_editor/education/${resumeID}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dataArray),
-      });
-
-      if (response.ok) {
-        console.log('Ура, победа');
-      } else {
-        const data = await response.json();
-        console.error(data[0].Error);
-      }
-    } catch {
-      console.log('Что-то пошло не так. Попробуйте перезагрузить страницу');
-    }
-
+  switch (pageID) {
+    case 0:
+      submitHandler = (evt) => EducationSubmit(evt, handleSuccess);
+      formContent = <EducationFormContent />;
+      break;
+    case 1:
+      submitHandler = (evt) => ExperienceSubmit(evt, handleSuccess);
+      formContent = <ExperienceFormContent />;
+      break;
+    case 2:
+      submitHandler = (evt) => ProjectsSubmit(evt, handleSuccess);
+      formContent = <ProjectsFormContent />;
+      break;
+    case 3:
+      submitHandler = (evt) => SkillsSubmit(evt, handleSuccess);
+      formContent = <SkillsFormContent />;
+      break;
+    case 4:
+      submitHandler = (evt) => AchievementsSubmit(evt, handleSuccess);
+      formContent = <AchievementsFormContent />;
+      break;
+    case 5:
+      submitHandler = (evt) => AboutAndHobbiesSubmit(evt, handleSuccess);
+      formContent = <AboutAndHobbiesFormContent />;
+      break;
+    default:
+      submitHandler = (evt) => EducationSubmit(evt, handleSuccess);
+      formContent = <EducationFormContent />;
+      break;
   }
 
   return (
@@ -84,66 +75,11 @@ export default function CreateResume() {
           </>
         }
       />
-      <main className="main resumeCreator">
-        <form className="resumeCreatorBlock" onSubmit={handleSubmit}>
-          <div className="blockPart CR">
-            <p className="partName CR">Образование</p>
-            <div className="partContent CR">
-              <label for="level"></label>
-              <select id="level" name="level" className='partContentInput level'>
-                <option disabled selected value>
-                  Уровень образования
-                </option>
-                <option value="Среднее общее (10-11 класс)">Среднее общее (10-11 класс)</option>
-                <option value="Cреднее профессиональное (Колледж)">Cреднее профессиональное (Колледж)</option>
-                <option value="Неоконченное высшее">Неоконченное высшее</option>
-                <option value="Бакалавриат">Бакалавриат</option>
-                <option value="Специалитет/Магистратура">Специалитет/Магистратура</option>
-                <option value="Аспирантура">Аспирантура</option>
-              </select>
-              <input
-                type="text"
-                required
-                className="partContentInput"
-                id="place"
-                name="place"
-                placeholder="Учебное заведение"
-              />
-              <input
-                type="text"
-                required
-                className="partContentInput"
-                id="specialization"
-                name="specialization"
-                placeholder="Специальность"
-              />
-            </div>
-          </div>
-          <div className="blockPart CR">
-            <p className="partName CR">Период обучения</p>
-            <p className="dateExtra">Если ещё учитесь, напишите предполагаемый год окончания</p>
-            <div className="partContentDate">
-              <input
-                type="number"
-                required
-                className="partContentInput date"
-                id="startYear"
-                name="startYear"
-                placeholder="Год начала"
-              />
-              <input
-                type="number"
-                required
-                className="partContentInput date"
-                id="endYear"
-                name="endYear"
-                placeholder="Год окончания"
-              />
-            </div>
-          </div>
-          <button type="submit" className="saveResume">Сохранить и продолжить</button>
-        </form>
-      </main>
+      <ResumeCreator
+        onSubmit={submitHandler}
+        formContent={formContent}
+        pageID={pageID}
+        onBack={handleBackButtonClick}/>
       <Footer />
     </>
   );
