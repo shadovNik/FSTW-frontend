@@ -22,7 +22,7 @@ export default function ResumeCreator({ formContent, onSubmit, pageID, onBack })
             </button>
           )}
           {pageID === 5 && (
-            <button type="submit" className="saveResume">
+            <button type="submit" className="saveResume final">
               Сохранить резюме
             </button>
           )}

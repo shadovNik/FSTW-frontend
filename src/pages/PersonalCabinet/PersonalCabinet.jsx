@@ -3,14 +3,17 @@ import './PersonalCabinet.css';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { loadData } from './GetData';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import EditProfile from '../../components/EditProfile/EditProfile';
+import ResumesRender from '../../components/ResumesRender/ResumesRender';
 
 export default function PersonalCabinet() {
   const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
   const [isEditOpen, setIsEditOpen] = useState(false);
+  const [resumesQuantity, setResumesQuantity] = useState(0);
+  const [resumes, setResumes] = useState(Array(0));
 
   const handleLogoutClick = (evt) => {
     evt.preventDefault();
@@ -45,6 +48,28 @@ export default function PersonalCabinet() {
   const toggleEdit = () => {
     setIsEditOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    async function getResumesQuantiy() {
+      try {
+        const response = await fetch("http://localhost:80/api/api/resume_editor/all_user_resumes", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        var data = await response.json();
+        if (response.ok) {
+          setResumesQuantity(data.length);
+          setResumes(data);
+        } else {
+          console.error("Что-то пошло не так. Попробуйте перезагрузить страницу");
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    getResumesQuantiy();
+  }, []);
 
   return (
     <>
@@ -123,20 +148,14 @@ export default function PersonalCabinet() {
           <div className="resumes">
             <p className="head resumes">Мои резюме</p>
             <div className="resumes-list">
-              {/* <p className='empty-list'>К сожалению, ваш список еще пуст..</p> */}
-              <div className="resume full">
-                <p className="resume-header">IT-специалист</p>
-                <a className="resume-href">
-                  <p className="resume-more">Подробнее</p>
-                </a>
-              </div>
+              <ResumesRender
+                resumesInfo = { resumes }
+                resumesQuantity = { resumesQuantity }
+              />
             </div>
             <div className="resumes-buttons">
               <button type="button" className="resume-button create" onClick={handleCreateResumeClick}>
                 Создать резюме
-              </button>
-              <button type="button" className="resume-button upload">
-                Загрузить резюме
               </button>
             </div>
           </div>
