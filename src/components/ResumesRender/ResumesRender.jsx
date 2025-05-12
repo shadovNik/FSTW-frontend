@@ -4,8 +4,7 @@ export default function ResumesRender({ resumesInfo, resumesQuantity }) {
   return (
     <>
       {resumesQuantity === 0 && (
-        <p className='empty-list'>Вы ещё не создали ни одного резюме.
-         <br />Нажмите кнопку ниже и создайте своё первое резюме!</p>
+        <p className='empty-list'>Нажмите кнопку ниже и создайте своё первое резюме!</p>
       )}
       {resumesQuantity !== 0 && (
         <>

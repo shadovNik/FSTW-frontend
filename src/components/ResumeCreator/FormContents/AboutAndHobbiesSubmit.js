@@ -1,5 +1,5 @@
 export default async function educationSubmit(evt, onSuccess) {
-    evt.preventDefault();
+  evt.preventDefault();
 
   var object = {};
 

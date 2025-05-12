@@ -1,0 +1,19 @@
+.hint {
+  padding-left: 25px;
+  display: flex;
+  gap: 12px;
+  align-self: flex-start;
+  align-items: center;
+  white-space: pre-line;
+}
+
+.hintContent {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: rgba(84, 68, 52, 0.7);
+}

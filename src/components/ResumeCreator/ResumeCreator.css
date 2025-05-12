@@ -1,8 +1,9 @@
 .main.resumeCreator {
   margin: 0;
-  padding: 0;
+  padding: 100px 0 20px 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 50px;
   justify-content: center;
   align-items: center;
   background-image: url("/img/resume-bg.png");
@@ -11,7 +12,7 @@
 }
 
 .resumeCreatorBlock {
-  margin: 105.9px 0;
+  margin: 0;
   width: 564px;
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 import "./CreateResume.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -16,16 +16,22 @@ import AchievementsFormContent from "../../components/ResumeCreator/FormContents
 import AchievementsSubmit from "../../components/ResumeCreator/FormContents/AchievementsSubmit"
 import AboutAndHobbiesFormContent from "../../components/ResumeCreator/FormContents/AboutAndHobbiesFormContent";
 import AboutAndHobbiesSubmit from "../../components/ResumeCreator/FormContents/AboutAndHobbiesSubmit"
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
 
 export default function CreateResume() {
+  const navigate = useNavigate();
   const [pageID, setPageID] = useState(0);
 
   const handleSuccess = () => {
     setPageID((prev) => Math.min(prev + 1, 5));
   }
 
+  const handleLastSuccess = () => {
+    navigate("/pc");
+  }
+
   const handleBackButtonClick = () => {
-    setPageID((prev) => Math.min(prev - 1, 1));
+    setPageID((prev) => Math.max(prev - 1, 0));
   }
 
   let submitHandler;
@@ -53,7 +59,7 @@ export default function CreateResume() {
       formContent = <AchievementsFormContent />;
       break;
     case 5:
-      submitHandler = (evt) => AboutAndHobbiesSubmit(evt, handleSuccess);
+      submitHandler = (evt) => AboutAndHobbiesSubmit(evt, handleLastSuccess);
       formContent = <AboutAndHobbiesFormContent />;
       break;
     default:
