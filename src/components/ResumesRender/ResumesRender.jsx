@@ -16,7 +16,7 @@ export default function ResumesRender({ resumesInfo, resumesQuantity, onDelete }
       const data = await response.json();
 
       if (response.ok) {
-        onDelete(resumeID);
+        onDelete();
         return;
       }
 

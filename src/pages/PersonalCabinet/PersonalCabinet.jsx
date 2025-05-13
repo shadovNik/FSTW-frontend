@@ -49,29 +49,29 @@ export default function PersonalCabinet() {
     setIsEditOpen((prev) => !prev);
   };
 
-  const handleDeleteSuccess = (resumeID) => {
-    setResumes((prev) => prev.filter((resume) => resume.id !== resumeID));
-    setResumesQuantity((prev) => prev - 1);
+  const getResumesInfo = async () => {
+    try {
+      const response = await fetch("http://localhost:80/api/api/resume_editor/all_user_resumes", {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      const data = await response.json();
+      if (response.ok) {
+        setResumesQuantity(data.length);
+        setResumes(data || []);
+      } else {
+        console.error("Что-то пошло не так. Попробуйте перезагрузить страницу");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDeleteSuccess = () => {
+    getResumesInfo();
   };
 
   useEffect(() => {
-    async function getResumesInfo() {
-      try {
-        const response = await fetch("http://localhost:80/api/api/resume_editor/all_user_resumes", {
-          headers: { "Content-Type": "application/json" },
-        });
-        const data = await response.json();
-        if (response.ok) {
-          setResumesQuantity(data.length);
-          setResumes(data || []);
-        } else {
-          console.error("Что-то пошло не так. Попробуйте перезагрузить страницу");
-        }
-      } catch (err) {
-        console.error(err);
-      }
-    }
-
     getResumesInfo();
   }, []);
 
