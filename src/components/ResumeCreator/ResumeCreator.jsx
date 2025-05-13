@@ -38,8 +38,8 @@ export default function ResumeCreator({ formContent, onSubmit, pageID, onBack })
           )}
         </div>
       </form>
-      <ProgressBar pageID={pageID} maxSteps={5} />
       <Hint hintContent={hintContents[pageID]} />
+      <ProgressBar pageID={pageID} maxSteps={5} />
     </main>
   );
 }

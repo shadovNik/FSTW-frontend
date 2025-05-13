@@ -280,6 +280,11 @@ body {
   color: black;
 }
 
+.resumeStuff {
+  display: flex;
+  gap: 8px;
+}
+
 .resume-href {
   text-decoration: none;
 }
@@ -301,6 +306,14 @@ body {
 
 .resume-more:active {
   color: rgba(89, 68, 33, 0.4);
+}
+
+.deleteIcon:hover {
+  opacity: 0.7;
+}
+
+.deleteIcon:active {
+  opacity: 0.4;
 }
 
 .resumes-buttons {

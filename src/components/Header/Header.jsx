@@ -21,7 +21,7 @@ export default function Header({ linksContent = null }) {
               toggleMenu();
           }}
         >
-          <img src="/img/fstw.svg" width="180" height="45" alt="Логотип персонального кабинета" />
+          <img src="/img/fstw.svg" className={styles['FSTW']} width="180" height="45" alt="Логотип персонального кабинета" />
         </Link>
         {linksContent && <div className={styles['login-register']}>{linksContent}</div>}
       </header>

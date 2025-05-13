@@ -49,17 +49,21 @@ export default function PersonalCabinet() {
     setIsEditOpen((prev) => !prev);
   };
 
+  const handleDeleteSuccess = (resumeID) => {
+    setResumes((prev) => prev.filter((resume) => resume.id !== resumeID));
+    setResumesQuantity((prev) => prev - 1);
+  };
+
   useEffect(() => {
-    async function getResumesQuantiy() {
+    async function getResumesInfo() {
       try {
         const response = await fetch("http://localhost:80/api/api/resume_editor/all_user_resumes", {
-          method: "GET",
           headers: { "Content-Type": "application/json" },
         });
-        var data = await response.json();
+        const data = await response.json();
         if (response.ok) {
           setResumesQuantity(data.length);
-          setResumes(data);
+          setResumes(data || []);
         } else {
           console.error("Что-то пошло не так. Попробуйте перезагрузить страницу");
         }
@@ -68,7 +72,7 @@ export default function PersonalCabinet() {
       }
     }
 
-    getResumesQuantiy();
+    getResumesInfo();
   }, []);
 
   return (
@@ -151,6 +155,7 @@ export default function PersonalCabinet() {
               <ResumesRender
                 resumesInfo = { resumes }
                 resumesQuantity = { resumesQuantity }
+                onDelete = { handleDeleteSuccess }
               />
             </div>
             <div className="resumes-buttons">
