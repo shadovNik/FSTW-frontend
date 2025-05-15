@@ -9,6 +9,7 @@ import PersonalCabinet from './pages/PersonalCabinet/PersonalCabinet';
 import PublicRoute from './components/PublicRoute';
 import ProtectedRoute from './components/ProtectedRoute';
 import CreateResume from './pages/CreateResume/CreateResume'
+import ResumeInfo from './pages/ResumeInfo/ResumeInfo';
 
 export default function App() {
   return (
@@ -71,8 +72,16 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/resume/:id"
+          element={
+            <ProtectedRoute>
+              <ResumeInfo />
+            </ProtectedRoute>
+          }
+        />
 
-        <Route path="*" element={<NotFound />} /> {/* 404 для всех остальных */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )

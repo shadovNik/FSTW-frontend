@@ -40,7 +40,7 @@ export default function ResumesRender({ resumesInfo, resumesQuantity, onDelete }
             <div key={resume.id} className="resume full" id={resume.id}>
               <p className="resume-header">{resume.title + ' №' + (i + 1)}</p>
               <div className="resumeStuff">
-                <Link to="/resume" className="resume-href">
+                <Link to={`/resume/${resume.id}`} className="resume-href">
                   <p className="resume-more">Посмотреть</p>
                 </Link>
                 <img
@@ -59,10 +59,3 @@ export default function ResumesRender({ resumesInfo, resumesQuantity, onDelete }
     </>
   )
 }
-
-{/* <div className="resume full">
-  <p className="resume-header">IT-специалист</p>
-  <a className="resume-href">
-    <p className="resume-more">Подробнее</p>
-  </a>
-</div>; */}

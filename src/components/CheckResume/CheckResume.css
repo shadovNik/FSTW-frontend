@@ -1,0 +1,112 @@
+.checkResume {
+  height: auto;
+  min-width: 800px;
+  max-width: 800px;
+  margin-top: 60px;
+  margin-bottom: 150px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  background-color: rgba(196, 148, 92, 0.5);
+  border-radius: 20px;
+}
+
+.fullName {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  color: black;
+}
+
+.resumeInfoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.educationPart {
+  max-width: 770px;
+  background-color: rgba(199, 147, 89, 0.55);
+  border-radius: 15px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievementDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.infoBlockHeader {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  color: black;
+}
+
+.infoBlockPart {
+  display: flex;
+  gap: 9px;
+}
+
+.blockPartHeader {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  color: black;
+}
+
+.blockPartInfo {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: black;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.checkResumeButtons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.checkResumeButton {
+  border: none;
+  background: none;
+
+  width: auto;
+  padding: 10px 15px;
+  margin: 0;
+  border-radius: 10px;
+  background-color: rgba(84, 68, 52, 0.6);
+
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: rgba(255, 255, 255, 1);
+}
+
+.checkResumeButton:hover{
+  background-color: rgba(84, 68, 52, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.checkResumeButton:active{
+  background-color: rgba(84, 68, 52, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+}
