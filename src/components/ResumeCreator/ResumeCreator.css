@@ -1,6 +1,9 @@
 .main.resumeCreator {
   margin: 0;
   padding: 100px 0 20px 0;
+  min-height: 413px;
+  height: auto;
+
   display: flex;
   flex-direction: column;
   gap: 50px;

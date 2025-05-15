@@ -1,14 +1,14 @@
 export default async function educationSubmit(evt, onSuccess) {
-    evt.preventDefault();
+  evt.preventDefault();
 
-  var object = {};
+  let object = {};
+  let dataArray = [];
 
   new FormData(evt.target).forEach(function (value, key) {
     object[key] = value;
+    dataArray.push(object);
+    object = {}
   });
-
-  var dataArray = [];
-  dataArray.push(object);
 
   try {
     const response = await fetch(

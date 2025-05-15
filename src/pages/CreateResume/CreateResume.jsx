@@ -16,7 +16,6 @@ import AchievementsFormContent from "../../components/ResumeCreator/FormContents
 import AchievementsSubmit from "../../components/ResumeCreator/FormContents/AchievementsSubmit"
 import AboutAndHobbiesFormContent from "../../components/ResumeCreator/FormContents/AboutAndHobbiesFormContent";
 import AboutAndHobbiesSubmit from "../../components/ResumeCreator/FormContents/AboutAndHobbiesSubmit"
-import ProgressBar from "../../components/ProgressBar/ProgressBar";
 
 export default function CreateResume() {
   const navigate = useNavigate();

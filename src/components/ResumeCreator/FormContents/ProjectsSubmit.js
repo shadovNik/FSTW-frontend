@@ -1,14 +1,19 @@
 export default async function projectsSubmit(evt, onSuccess) {
-    evt.preventDefault();
+  evt.preventDefault();
 
-  var object = {};
+  let object = {};
+  let dataArray = [];
+  let count = 0;
 
   new FormData(evt.target).forEach(function (value, key) {
     object[key] = value;
+    count += 1;
+    if (count === 3) {
+      dataArray.push(object);
+      object = {}
+      count = 0
+    }
   });
-
-  var dataArray = [];
-  dataArray.push(object);
 
   try {
     const response = await fetch(

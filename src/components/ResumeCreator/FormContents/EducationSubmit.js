@@ -1,17 +1,24 @@
 export default async function educationSubmit(evt, onSuccess) {
     evt.preventDefault();
 
-  var object = {};
+  let object = {};
+  let dataArray = [];
+  let count = 0;
 
   new FormData(evt.target).forEach(function (value, key) {
     object[key] = value;
+    count += 1;
+    if (key === 'startYear') {
+      object.startYear = Number(object.startYear);
+    } else if (key === 'endYear') {
+      object.endYear = Number(object.endYear);
+    }
+    if (count === 5) {
+      dataArray.push(object);
+      object = {}
+      count = 0
+    }
   });
-
-  object.startYear = Number(object.startYear);
-  object.endYear = Number(object.endYear);
-
-  var dataArray = [];
-  dataArray.push(object);
 
   try {
     const response = await fetch(

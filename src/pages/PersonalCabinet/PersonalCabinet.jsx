@@ -13,7 +13,7 @@ export default function PersonalCabinet() {
   const navigate = useNavigate();
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [resumesQuantity, setResumesQuantity] = useState(0);
-  const [resumes, setResumes] = useState(Array(0));
+  const [resumes, setResumes] = useState([]);
 
   const handleLogoutClick = (evt) => {
     evt.preventDefault();
