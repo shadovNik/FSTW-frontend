@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ResumesRender({ resumesInfo, resumesQuantity, onDelete }) {
+  const navigate = useNavigate();
+
+  const handleEditClick = (evt, ID) => {
+    evt.preventDefault();
+    navigate(`/resume/edit/${ID}`)
+  }
+
   const handleDelete = async (evt, resumeID) => {
     evt.preventDefault();
 
@@ -24,8 +31,8 @@ export default function ResumesRender({ resumesInfo, resumesQuantity, onDelete }
         alert(data[0].Error);
         return;
     }
-    } catch (error) {
-      console.error('Ошибка:', error);
+    } catch {
+      alert('Что-то пошло не так, попробуйте перезагрузить страницу');
     }
   }
 
@@ -43,6 +50,14 @@ export default function ResumesRender({ resumesInfo, resumesQuantity, onDelete }
                 <Link to={`/resume/${resume.id}`} className="resume-href">
                   <p className="resume-more">Посмотреть</p>
                 </Link>
+                <img
+                  src="/img/EditIcon.svg"
+                  className="editIcon"
+                  width="20"
+                  height="20"
+                  alt='Изменить'
+                  onClick={(evt) => handleEditClick(evt, resume.id)}
+                />
                 <img
                   src="/img/DeleteIcon.svg"
                   className="deleteIcon"

@@ -42,8 +42,6 @@ export default function CheckResume({ resumeID }) {
       const response = await fetch(`http://localhost:80/api/api/resume_editor/all_info/${resumeID}`);
       const data = await response.json();
       setResumeData(data);
-      console.log(data);
-      console.log(resumeData);
     } catch (error) {
       console.error('Ошибка загрузки:', error);
     } finally {
@@ -53,7 +51,6 @@ export default function CheckResume({ resumeID }) {
 
   useEffect(() => {
     loadResumeData();
-    console.log(resumeData);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resumeID])
 

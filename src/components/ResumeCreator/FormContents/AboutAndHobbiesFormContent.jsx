@@ -1,4 +1,22 @@
-export default function AboutAndHobbiesFormContent() {
+import { useEffect, useState } from "react";
+
+export default function AboutAndHobbiesFormContent({ aboutContent, hobbiesContent }) {
+  const [about, setAbout] = useState(aboutContent ?? '');
+  const [hobbies, setHobbies] = useState(hobbiesContent ?? '');
+
+  useEffect(() => {
+    setAbout(aboutContent ?? '');
+    setHobbies(hobbiesContent ?? '');
+  }, [aboutContent, hobbiesContent]);
+
+  const handleChangeAbout = (e) => {
+    setAbout(e.target.value);
+  };
+
+  const handleChangeHobbies = (e) => {
+    setHobbies(e.target.value);
+  };
+
   return (
     <>
       <div className="blockPart CR">
@@ -10,6 +28,8 @@ export default function AboutAndHobbiesFormContent() {
             name="about"
             placeholder="О себе"
             wrap="soft"
+            value={about}
+            onChange={handleChangeAbout}
           />
           <textarea
             className="partContentInput textArea"
@@ -17,6 +37,8 @@ export default function AboutAndHobbiesFormContent() {
             name="hobbies"
             placeholder="Хобби"
             wrap="soft"
+            value={hobbies}
+            onChange={handleChangeHobbies}
           />
         </div>
       </div>

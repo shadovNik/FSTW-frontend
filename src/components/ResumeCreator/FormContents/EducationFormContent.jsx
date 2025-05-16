@@ -1,25 +1,39 @@
 import { useState } from "react";
 
-export default function EducationFormContent() {
-  const [blocks, setBlocks] = useState([{ id: 0 }]);
+export default function EducationFormContent({ content }) {
+  const [blocks, setBlocks] = useState(content || [{ endYear: "", level: "", place: "", specialization: "", startYear: "" }]);
 
   const handleAddBlock = () => {
-    setBlocks((prevBlocks) => [...prevBlocks, { id: prevBlocks.length }]);
+    setBlocks((prevBlocks) => [...prevBlocks, { endYear: "", level: "", place: "", specialization: "", startYear: "" }]);
   };
 
   const handleRemoveBlock = () => {
     setBlocks((prevBlocks) => prevBlocks.slice(0, - 1));
   }
 
+  const handleInputChange = (index, field, value) => {
+    setBlocks((prevBlocks) =>
+      prevBlocks.map((block, i) =>
+        i === index ? { ...block, [field]: value } : block
+      )
+    );
+  };
+
   return (
     <>
       <div className="blockPart CR">
         <p className="partName CR">Образование</p>
-        {blocks.map((block) => (
+        {blocks.map((block, index) => (
           <>
           <div className="partContent CR">
             <label for="level"></label>
-            <select id={`level-${block.id}`} name="level" className="partContentInput level">
+            <select
+              id={`level-${index}`}
+              name="level"
+              className="partContentInput level"
+              value={block.level}
+              onChange={(e) => handleInputChange(index, "level", e.target.value)}
+            >
               <option disabled selected value>
                 Уровень образования
               </option>
@@ -40,35 +54,45 @@ export default function EducationFormContent() {
               type="text"
               required
               className="partContentInput"
-              id={`place-${block.id}`}
+              id={`place-${index}`}
               name="place"
               placeholder="Учебное заведение"
+              value={block.place}
+              onChange={(e) => handleInputChange(index, "place", e.target.value)}
             />
             <input
               type="text"
               required
               className="partContentInput"
-              id={`specialization-${block.id}`}
+              id={`specialization-${index}`}
               name="specialization"
               placeholder="Специальность"
+              value={block.specialization}
+              onChange={(e) => handleInputChange(index, "specialization", e.target.value)}
             />
           </div>
           <div className="partContentDate">
             <input
-              type="number"
+              type="text"
               required
               className="partContentInput date"
-              id={`startYear-${block.id}`}
+              id={`startYear-${index}`}
               name="startYear"
               placeholder="Год начала"
+              pattern="[0-9]+"
+              value={block.startYear}
+              onChange={(e) => handleInputChange(index, "startYear", e.target.value)}
             />
             <input
-              type="number"
+              type="text"
               required
               className="partContentInput date"
-              id={`endYear-${block.id}`}
+              id={`endYear-${index}`}
               name="endYear"
               placeholder="Год окончания"
+              pattern="[0-9]+"
+              value={block.endYear}
+              onChange={(e) => handleInputChange(index, "endYear", e.target.value)}
             />
           </div>
           </>

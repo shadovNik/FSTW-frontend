@@ -10,6 +10,7 @@ import PublicRoute from './components/PublicRoute';
 import ProtectedRoute from './components/ProtectedRoute';
 import CreateResume from './pages/CreateResume/CreateResume'
 import ResumeInfo from './pages/ResumeInfo/ResumeInfo';
+import EditResume from './pages/EditResume/EditResume';
 
 export default function App() {
   return (
@@ -77,6 +78,14 @@ export default function App() {
           element={
             <ProtectedRoute>
               <ResumeInfo />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/resume/edit/:id"
+          element={
+            <ProtectedRoute>
+              <EditResume />
             </ProtectedRoute>
           }
         />

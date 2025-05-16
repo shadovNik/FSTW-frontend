@@ -93,7 +93,7 @@ body {
 .partContentInput {
   width: 544px;
   height: 39px;
-  padding: 5px 0;
+  padding: 5px;
   border: none;
   background: none;
   border-radius: 10px;
@@ -116,9 +116,8 @@ body {
 }
 
 .partContentInput.textArea {
-  padding: 10px;
-  width: 440px;
   height: 130px;
+  padding: 10px;
   border: none;
   border-radius: 10px;
   background-color: rgba(84, 68, 52, 0.2);
@@ -145,11 +144,6 @@ body {
 
 .partContentInput:focus {
   outline: 2px solid black;
-}
-
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 .creatorButtons {
