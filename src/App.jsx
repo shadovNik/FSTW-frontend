@@ -11,6 +11,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import CreateResume from './pages/CreateResume/CreateResume'
 import ResumeInfo from './pages/ResumeInfo/ResumeInfo';
 import EditResume from './pages/EditResume/EditResume';
+import AboutPage from './pages/AboutPage/About';
 
 export default function App() {
   return (
@@ -89,7 +90,7 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-
+        <Route path="/about" element={<AboutPage /> } />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

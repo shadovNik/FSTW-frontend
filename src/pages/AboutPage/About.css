@@ -1,0 +1,129 @@
+.logregHref {
+  text-decoration: none;
+}
+
+.logregButton {
+  display: flex;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.logregButton:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logregButton:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logregButton.persCab {
+  width: 220px;
+}
+
+.loginRegister {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main.about {
+  margin: 0;
+  padding-top: 60px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/img/pers-cabinet-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.aboutContent {
+  width: 1210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.aboutContent-header {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 100%;
+}
+
+.aboutContent-content {
+  padding: 30px 35px;
+  border-radius: 20px;
+  background-color: rgba(196, 148, 92, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.aboutPart {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.aboutPartHeader {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+}
+
+.horizontalLine {
+  width: inherit;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.aboutPartContent {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.aboutPerson {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.aboutPerson-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.aboutPerson-name {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+}

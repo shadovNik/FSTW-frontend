@@ -1,7 +1,6 @@
 import "./ResumeInfo.css";
 import { Link, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import CheckResume from "../../components/CheckResume/CheckResume";
 
 

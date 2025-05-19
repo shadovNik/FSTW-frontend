@@ -16,6 +16,10 @@
   gap: 34px;
 }
 
+.content-link {
+  text-decoration: none;
+}
+
 .content.text {
   margin: 0;
   padding: 0;
@@ -25,4 +29,12 @@
   line-height: 100%;
   letter-spacing: 0%;
   color: rgba(190, 212, 164, 1);
+}
+
+.content.text:hover {
+  color: rgba(190, 212, 164, 0.7);
+}
+
+.content.text:active {
+  color: rgba(190, 212, 164, 0.4);
 }

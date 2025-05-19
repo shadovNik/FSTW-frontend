@@ -48,12 +48,6 @@ export default function NavigationMenu({ onClose }) {
             </Link>
           </li>
         )}
-        <li>
-
-          <Link to="" className={styles['menu-link']} onClick={onClose}>
-            Контакты
-          </Link>
-        </li>
       </ul>
     </div>
   );

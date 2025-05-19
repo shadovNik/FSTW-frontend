@@ -1,19 +1,22 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export default function Footer() {
   return (
     <footer className="footer main-page">
       <div className="footer content">
-        <p className="content text">О проекте</p>
+        <Link to="/about" className="content-link">
+          <p className="content text">О проекте</p>
+        </Link>
         <p className="content text">FAQ</p>
       </div>
       <div className="footer content">
-        <a className="cu-logo" href="">
+        <Link className="cu-logo">
           <img src="/img/cu-logo.svg" width="54" height="54" alt="Логотип персонального кабинета" />
-        </a>
-        <a className="fstw-footer-logo" href="">
+        </Link>
+        <Link className="fstw-footer-logo">
           <img src="/img/fstw-footer.svg" width="132" height="67" alt="Логотип персонального кабинета" />
-        </a>
+        </Link>
       </div>
     </footer>
   );
