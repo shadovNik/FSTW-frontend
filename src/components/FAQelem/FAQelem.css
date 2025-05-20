@@ -1,0 +1,65 @@
+.FAQelem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: rgba(84, 68, 52, 0.9);
+  border-radius: 20px;
+  padding: 25px 30px;
+}
+
+.FAQelem-head {
+  display: flex;
+  width: inherit;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.FAQelem-headText {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  color: white;
+}
+
+.headLine {
+  width: 40px;
+  border-top: 4px solid rgba(255, 255, 255, 1);
+}
+
+.elemFullLine {
+  width: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+.FAQelem-content {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.elemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.elemContentQuestion {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.elemContentAnswer {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: rgba(255, 255, 255, 0.85);
+}

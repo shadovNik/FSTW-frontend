@@ -1,0 +1,77 @@
+.logregHref {
+  text-decoration: none;
+}
+
+.logregButton {
+  display: flex;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.logregButton:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logregButton:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logregButton.persCab {
+  width: 220px;
+}
+
+.loginRegister {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main.FAQ {
+  margin: 0;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/img/pers-cabinet-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.FAQ-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.FAQ-header {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 100%;
+  color: black;
+}
+
+.FAQ-container {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
