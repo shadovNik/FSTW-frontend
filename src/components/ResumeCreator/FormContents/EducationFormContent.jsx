@@ -52,7 +52,6 @@ export default function EducationFormContent({ content }) {
             </select>
             <input
               type="text"
-              required
               className="partContentInput"
               id={`place-${index}`}
               name="place"
@@ -62,7 +61,6 @@ export default function EducationFormContent({ content }) {
             />
             <input
               type="text"
-              required
               className="partContentInput"
               id={`specialization-${index}`}
               name="specialization"
@@ -74,7 +72,6 @@ export default function EducationFormContent({ content }) {
           <div className="partContentDate">
             <input
               type="text"
-              required
               className="partContentInput date"
               id={`startYear-${index}`}
               name="startYear"
@@ -85,7 +82,6 @@ export default function EducationFormContent({ content }) {
             />
             <input
               type="text"
-              required
               className="partContentInput date"
               id={`endYear-${index}`}
               name="endYear"

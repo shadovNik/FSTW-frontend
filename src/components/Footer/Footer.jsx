@@ -8,7 +8,9 @@ export default function Footer() {
         <Link to="/about" className="content-link">
           <p className="content text">О проекте</p>
         </Link>
-        <p className="content text">FAQ</p>
+        <Link to="/FAQ" className="content-link">
+          <p className="content text">FAQ</p>
+        </Link>
       </div>
       <div className="footer content">
         <Link className="cu-logo">

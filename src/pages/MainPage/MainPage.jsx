@@ -27,7 +27,7 @@ export default function MainPage() {
           <div className="assistant">
             <p className="assistant header">IT-Стажировки | AI</p>
             <div className="assistant search">
-              <input type="text" className="search-input" placeholder="Ищи стажировку здесь!" />
+              <p className="search-input">Ищи стажировку здесь</p>
             </div>
           </div>
           <div className="assistant-description">

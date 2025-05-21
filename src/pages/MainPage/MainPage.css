@@ -81,29 +81,32 @@ body {
   color: rgba(255, 248, 241, 1);
 }
 
-.search-input {
-  width: 648px;
-  height: 59px;
+.assistant.search {
+  width: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  padding: 20px 35px;
+  background-color: rgba(84, 68, 52, 0.5);
   border-radius: 15px;
-  border-style: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin: 0;
-  padding: 0;
-  padding-left: 24px;
-  font-family: 'Exo 2';
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  color: rgba(195, 195, 180, 1);
+  cursor: pointer;
 }
 
-.search-input::placeholder {
-  color: rgba(177, 175, 162, 0.8);
+.assistant.search:hover {
+  background-color: rgba(84, 68, 52, 0.3);
+}
+
+.assistant.search:active {
+  background-color: rgba(84, 68, 52, 0.7);
+}
+
+.search-input {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 
 .search.buttons {

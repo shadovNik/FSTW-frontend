@@ -22,11 +22,7 @@ export default function MainLogged() {
           <div className={styles.assistant}>
             <p className={`${styles.assistantHeader}`}>IT-Стажировки | AI</p>
             <div className={styles.assistantSearch}>
-              <input
-                type="text"
-                className={styles.searchInput}
-                placeholder="Ищи стажировку здесь!"
-              />
+              <p className={styles.searchInput}>Ищи стажировку здесь</p>
             </div>
           </div>
           <div className={styles.assistantDescription}>
