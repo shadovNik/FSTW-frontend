@@ -1,0 +1,342 @@
+.logregHref {
+  text-decoration: none;
+}
+
+.logregButton {
+  display: flex;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.logregButton:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logregButton:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logregButton.persCab {
+  width: 220px;
+}
+
+.loginRegister {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main.admin {
+  margin: 0;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  background-color: whitesmoke;
+}
+
+.adminAddButton--container {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: center;
+}
+
+.adminAddButton {
+  margin: 0;
+  padding: 25px 40px;
+  background-color: rgba(76, 175, 80, 1);
+  color: white;
+  border: none;
+  border-radius: 15px;
+
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  cursor: pointer;
+}
+
+.adminAddButton:hover {
+  background-color: rgba(76, 175, 80, 0.7);
+}
+
+.adminAddButton:active {
+  background-color: rgba(76, 175, 80, 0.4);
+}
+
+.addFromHH {
+  margin: 0;
+  padding: 15px 0;
+  background-color: rgba(57, 211, 242, 1);
+  color: white;
+  border: none;
+  border-radius: 15px;
+
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  cursor: pointer;
+}
+
+.addFromHH:hover {
+  background-color: rgba(57, 211, 242, 0.7);
+}
+
+.addFromHH:active {
+  background-color: rgba(57, 211, 242, 0.4);
+}
+
+.addFromHH:disabled {
+  cursor: not-allowed;
+}
+
+.addVacancyForm {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addVacancyForm-input {
+  margin: 0;
+  padding: 10px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+
+  font-family: 'Exo 2';
+  font-weight: 400;
+}
+
+.addVacancyForm-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addVacancyForm-button {
+  margin: 0;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+
+  font-family: 'Exo 2';
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.addVacancyForm-button.close {
+  background-color: rgba(244, 67, 54, 1);
+}
+
+.addVacancyForm-button.close:hover {
+  background-color: rgba(244, 67, 54, 0.7);
+}
+
+.addVacancyForm-button.close:active {
+  background-color: rgba(244, 67, 54, 0.4);
+}
+
+.addVacancyForm-button.add {
+  background-color: rgba(76, 175, 80, 1);
+}
+.addVacancyForm-button.add:hover {
+  background-color: rgba(76, 175, 80, 0.7);
+}
+.addVacancyForm-button.add:active {
+  background-color: rgba(76, 175, 80, 0.4);
+}
+
+.adminFilters--container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.adminFilters--header {
+  margin: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: black;
+}
+
+.adminFilters--select {
+  padding: 8px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.adminVacancies--container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.adminVacancies--title {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: #000;
+}
+
+.adminVacList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.vacItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+  align-items: stretch;
+  background-color: white;
+  border: 1px solid #eeeeeed0;
+  border-radius: 15px;
+}
+
+.vacItem.archived {
+  background-color: rgba(155, 154, 154, 1);
+}
+
+.vacItemHeader {
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vacItemTitle {
+  margin: 0;
+  font-family: 'Exo 2';
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 100%;
+  color: black;
+}
+
+.vacItemButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+}
+
+.btn-save {
+  background-color: rgba(76, 175, 80, 1);
+}
+.btn-save:hover {
+  background-color: rgba(76, 175, 80, 0.7);
+}
+.btn-save:active {
+  background-color: rgba(76, 175, 80, 0.4);
+}
+
+.btn-view {
+  background-color: rgba(33, 150, 243, 1);
+}
+
+.btn-view:hover {
+  background-color: rgba(33, 150, 243, 0.7);
+}
+
+.btn-view:active {
+  background-color: rgba(33, 150, 243, 0.4);
+}
+
+.btn-edit {
+  background-color: rgba(255, 193, 7, 1);
+  color: #333;
+}
+
+.btn-edit:hover {
+  background-color: rgba(255, 193, 7, 0.7);
+}
+
+.btn-edit:active {
+  background-color: rgba(255, 193, 7, 0.4);
+}
+
+.btn-archive {
+  background-color: rgba(96, 125, 139, 1);
+}
+
+.btn-archive:hover {
+  background-color: rgba(96, 125, 139, 0.7);
+}
+
+.btn-archive:active {
+  background-color: rgba(96, 125, 139, 0.4);
+}
+
+.btn-delete {
+  background-color: rgba(244, 67, 54, 1);
+}
+
+.btn-delete:hover {
+  background-color: rgba(244, 67, 54, 0.7);
+}
+
+.btn-delete:active {
+  background-color: rgba(244, 67, 54, 0.4);
+}
+
+.vacItemView {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vacItemViewElement {
+  display: flex;
+  gap: 8px;
+}
+
+.vacItemViewElement--text {
+  margin: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 20px;
+  color: black;
+}
