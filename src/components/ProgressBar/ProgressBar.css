@@ -18,3 +18,20 @@
 .progress-bar__item.empty {
   background-color: rgba(248, 238, 228, 1);
 }
+
+@media (min-width: 360px) and (max-width: 740px) {
+.progress-bar__item {
+  width: 66px;
+  height: 10px;
+}
+
+.progress-bar {
+  gap: 4px;
+  position: fixed;
+  bottom: 65px;
+  left: 0;
+  width: 93%;
+  height: 10px;
+}
+
+}

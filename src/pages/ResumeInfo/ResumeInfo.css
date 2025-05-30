@@ -51,3 +51,27 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+
+@media (min-width: 360px) and (max-width: 740px) {
+
+.logoutButton {
+  width: 60px;
+  height: 25px;
+  font-size: 10px;
+}
+
+.logregButton.persCab {
+  width: 100px;
+  height: 20px;
+}
+
+.loginRegister {
+  font-size: 10px;
+}
+
+.checkResume {
+  min-width: 340px;
+}
+
+}

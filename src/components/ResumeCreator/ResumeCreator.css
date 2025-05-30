@@ -44,3 +44,19 @@
 .saveResume:active {
   color: rgba(0, 0, 0, 0.4);
 }
+
+@media (min-width: 360px) and (max-width: 740px) {
+.saveResume {
+  font-size: 15px;
+}
+
+.resumeCreatorBlock {
+  width: 374px;
+  gap: 25px;
+}
+
+.main.resumeCreator {
+  min-height: 87vh;
+}
+
+}

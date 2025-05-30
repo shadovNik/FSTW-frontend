@@ -17,3 +17,19 @@
   line-height: 100%;
   color: rgba(84, 68, 52, 0.7);
 }
+
+@media (min-width: 360px) and (max-width: 740px) {
+
+ img {
+  width: 25px;
+  height: 25px;
+} 
+
+.hintContent {
+  font-size: 10px;
+}
+
+.hint {
+padding-top: 60px;
+}
+}

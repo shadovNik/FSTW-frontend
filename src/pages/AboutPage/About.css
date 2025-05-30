@@ -127,3 +127,42 @@ body {
   font-size: 24px;
   line-height: 100%;
 }
+
+@media (min-width: 360px) and (max-width: 740px) {
+  .logregButton.persCab {
+    width: 100px;
+    height: 20px;
+}
+
+  .loginRegister {
+    font-size: 10px;
+}
+  
+  .main.FAQ {
+    background-position: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+
+  .aboutContent-header {
+  margin: 16px;
+  font-size: 21px;
+  }
+
+  .aboutContent {
+  width: 85%;
+  gap: 20px;
+  }
+ 
+  .aboutPartHeader {
+  font-size: 14px;
+}
+
+.aboutPartContent {
+  font-size: 12px;
+}
+
+.aboutPerson-name {
+  font-size: 12px;
+}
+ }

@@ -75,3 +75,52 @@ body {
   flex-direction: column;
   gap: 30px;
 }
+
+@media (min-width: 360px) and (max-width: 740px) {
+  .main.FAQ {
+    background-position: center;
+    align-items: flex-start;
+    min-height: 75vh;
+  }
+
+    .FAQ-header {
+    margin-top: 58px;
+    margin-bottom: 55px;
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .FAQ-content {
+    gap: 30px;
+    width: 95%;
+  }
+
+  .FAQ-container {
+    width: 100%;
+    gap: 20px;
+  }
+
+  /* Стили для аккордеона */
+  .FAQelem {
+    width: 93%;
+    padding: 10px 10px !important;
+    border-radius: 10px;
+  }
+
+  p.FAQelem-headText{
+    font-size: 16px;
+  }
+
+  .headLine {
+    width: 10px !important;
+}
+
+.elemContentQuestion {
+  font-size: 13px !important;
+}
+
+.elemContentAnswer {
+  font-size: 10px !important;
+}
+ }

@@ -38,3 +38,46 @@
 .content.text:active {
   color: rgba(190, 212, 164, 0.4);
 }
+
+.cu-logo img,
+.fstw-footer-logo img {
+  transition: all 0.3s ease; /* Плавное изменение размеров */
+}
+
+.cu-logo img {
+  width: 54px;
+  height: 54px;
+}
+
+.fstw-footer-logo img {
+  width: 132px;
+  height: 67px;
+}
+
+@media (min-width: 360px) and (max-width: 740px) {
+.content.text {
+  font-size: 16px;
+}
+
+  .cu-logo img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .fstw-footer-logo img {
+    width: 90px;
+    height: 46px;
+  }
+
+  .footer.main-page{
+    gap: 40px;
+  }
+
+  .footer.content {
+  gap: 20px;
+}
+
+.footer{
+  padding: 8px 15px;
+}
+}

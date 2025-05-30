@@ -140,3 +140,48 @@
 .editProfileSubmit:active {
   color: rgba(0, 0, 0, 0.4);
 }
+
+@media (min-width: 360px) and (max-width: 740px) {
+
+.editProfile {
+  margin: 0;
+  padding: 30px 40px;
+  width: 335px;
+  gap: 40px;
+}
+
+.editHead {
+  width: 381px;
+}
+
+.editProfileHeader {
+  font-size: 18px;
+}
+
+.editProfile {
+  width: 335px;
+  gap: 30px;
+}
+
+.partName {
+  font-size: 14px;
+}
+
+.partInput {
+  font-size: 14px;
+}
+
+.blockPart {
+  align-items: center;
+}
+
+.partInput.skills {
+  width: 340px;
+  height: 130px;
+  font-size: 16px;
+}
+
+.editProfileBlock {
+  width: 380px;
+}
+}

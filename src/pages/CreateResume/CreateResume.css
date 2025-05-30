@@ -207,3 +207,65 @@ body {
 .deleteBlockButton:active {
   color: rgba(149, 34, 34, 0.4);
 }
+
+
+@media (min-width: 360px) and (max-width: 740px) {
+
+.partContentInput {
+  width: 320px;
+  height: 25px;
+  font-size: 12px;
+}
+
+.partContentInput.level {
+  height: 35px;
+  width: 330px;
+
+}
+
+.partContentInput.date {
+  width: 105px;
+}
+
+.dateExtra {
+  font-size: 12px;
+}
+
+.addBlockButton {
+  font-size: 14px;
+}
+
+.deleteBlockButton {
+  font-size: 14px;
+}
+
+.buttonsContainer {
+  width: 244px;
+}
+
+.creatorButtons {
+  width: 320px;
+}
+
+.partName.CR {
+  font-size: 24px;
+}
+
+.partContentInput.textArea {
+  font-size: 14px;
+  width: 320px;
+}
+
+.partContentInput.textArea::placeholder {
+  font-size: 14px;
+}
+
+.logregButton.persCab {
+  width: 120px !important;
+}
+
+.loginRegister {
+  font-size: 12px !important;
+}
+
+}
