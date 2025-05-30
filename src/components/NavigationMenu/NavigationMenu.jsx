@@ -37,7 +37,7 @@ export default function NavigationMenu({ onClose }) {
           </Link>
         </li>
         <li>
-          <Link to="" className={styles['menu-link']} onClick={onClose}>
+          <Link to="/internships" className={styles['menu-link']} onClick={onClose}>
             Каталог стажировок
           </Link>
         </li>

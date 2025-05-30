@@ -11,7 +11,6 @@ export default function Admin() {
   const [isLoading, setIsLoading] = useState(true);
   const [hhLoading, setHHLoading] = useState(false);
   const [filter, setFilter] = useState("all");
-  const [error, setError] = useState(null);
 
   const fetchVacancies = async () => {
     try {
@@ -25,7 +24,6 @@ export default function Admin() {
       }
     } catch (error) {
       console.error("Ошибка при загрузке вакансий:", error);
-      setError("Не удалось загрузить вакансии");
     } finally {
       setIsLoading(false);
     }
@@ -75,7 +73,6 @@ export default function Admin() {
       }
     } catch (err) {
       console.error("Ошибка при добавлении вакансии:", err);
-      setError("Не удалось добавить вакансию");
     }
   };
 
@@ -95,7 +92,6 @@ export default function Admin() {
       }
     } catch (err) {
       console.error("Ошибка при удалении:", err);
-      setError("Не удалось удалить вакансию");
     }
   };
 
@@ -110,6 +106,7 @@ export default function Admin() {
 
       if (response.ok) {
         fetchVacancies();
+        setSelectedVacancyId(null);
         setIsEditing(false);
         setEditedVacancy(null);
       } else {
@@ -117,7 +114,6 @@ export default function Admin() {
       }
     } catch (err) {
       console.error("Ошибка при сохранении:", err);
-      setError("Не удалось сохранить изменения");
     }
   };
 
@@ -140,7 +136,6 @@ export default function Admin() {
       }
     } catch (err) {
       console.error("Ошибка при архивировании:", err);
-      setError("Не удалось изменить статус архивирования");
     }
   };
 
@@ -168,7 +163,6 @@ export default function Admin() {
   }
 
   if (isLoading) return <p>Загрузка...</p>;
-  if (error) return <p>{error}</p>;
 
   return (
     <>
@@ -333,6 +327,9 @@ export default function Admin() {
                         )}
                       </div>
                       <div className="vacItemViewElement">
+                        <p className="vacItemViewElement--text">{vacancy.setSalary}</p>
+                      </div>
+                      <div className="vacItemViewElement">
                         <p className="vacItemViewElement--text">Описание стажировки:</p>
                         {isEditing ? (
                           <input
@@ -372,33 +369,6 @@ export default function Admin() {
                           />
                         ) : (
                           <p className="vacItemViewElement--text">{vacancy.workFormat}</p>
-                        )}
-                      </div>
-                      <div className="vacItemViewElement">
-                        <p className="vacItemViewElement--text">Окно зарплаты:</p>
-                        {isEditing ? (
-                          <>
-                            <input
-                              type="text"
-                              className="vacItemViewElement--text"
-                              name="salaryFrom"
-                              value={editedVacancy?.salaryFrom || ""}
-                              onChange={handleInputChange}
-                              placeholder="Ниж. граница"
-                            />
-                            <input
-                              type="text"
-                              className="vacItemViewElement--text"
-                              name="salaryTo"
-                              value={editedVacancy?.salaryTo || ""}
-                              onChange={handleInputChange}
-                              placeholder="Верх. граница"
-                            />
-                          </>
-                        ) : (
-                          <p className="vacItemViewElement--text">
-                            от {vacancy.salaryFrom || "не указано"} до {vacancy.salaryTo || "не указано"}
-                          </p>
                         )}
                       </div>
                       <div className="vacItemViewElement">

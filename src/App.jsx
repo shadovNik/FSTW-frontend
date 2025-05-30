@@ -14,6 +14,7 @@ import EditResume from './pages/EditResume/EditResume';
 import AboutPage from './pages/AboutPage/About';
 import FAQ from './pages/FAQ/FAQ';
 import Admin from './pages/Admin/Admin';
+import Internships from './pages/Internships/Internships';
 
 export default function App() {
   return (
@@ -65,6 +66,14 @@ export default function App() {
           element={
             <ProtectedRoute>
               <PersonalCabinet />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/internships"
+          element={
+            <ProtectedRoute>
+              <Internships />
             </ProtectedRoute>
           }
         />

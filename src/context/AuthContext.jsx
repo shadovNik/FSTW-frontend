@@ -20,8 +20,6 @@ export function AuthProvider ({ children }) {
   }
 
   const logout = () => {
-    localStorage.removeItem('accessToken');
-    setIsAuth(false);
     logoutFetch();
   }
 
@@ -29,6 +27,11 @@ export function AuthProvider ({ children }) {
     const response = await fetch('http://localhost:80/api/logout', {
       method: "POST",
     });
+
+    if (response.ok) {
+      localStorage.removeItem('accessToken');
+      setIsAuth(false);
+    }
 
     if (!response.ok) {
       alert('Вы не можете выйти, не авторизовавшись');

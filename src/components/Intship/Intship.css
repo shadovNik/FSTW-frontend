@@ -1,0 +1,93 @@
+.intship {
+  width: 400px;
+  margin: 0;
+  padding: 20px;
+  background-color: rgba(84, 68, 52, 0.3);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.intshipHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header--company {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.intshipTitle {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 1);
+}
+
+.extra {
+  display: flex;
+  justify-content: space-between;
+}
+
+.intshipExtra {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.intshipText {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.8);
+  overflow-wrap: normal;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.intshipText.skills {
+  color: rgba(0, 0, 0, 0.65);
+  -webkit-line-clamp: 2;
+  max-width: 317.18px;
+}
+
+.intshipText.more {
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.intshipText.more:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.intshipText.more:active {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.intshipSkillsContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.intshipLink {
+  text-decoration: none;
+}

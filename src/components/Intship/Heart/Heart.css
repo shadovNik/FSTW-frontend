@@ -1,0 +1,19 @@
+.heart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 23px;
+}
+
+.heart {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heart:hover {
+  transform: scale(0.9);
+}
+
+.heart:active {
+  transform: scale(1.1);
+}

@@ -1,0 +1,197 @@
+.logregHref {
+  text-decoration: none;
+}
+
+.logregButton {
+  display: flex;
+  height: 60px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.logregButton:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logregButton:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logregButton.persCab {
+  width: 220px;
+}
+
+.loginRegister {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main.internshipsMain {
+  min-height: 398px;
+  margin: 0;
+  padding: 15px 30px 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  background-image: url('/img/resume-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.internshipsFilters {
+  display: flex;
+  gap: 30px;
+}
+
+.filterTitle {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.filterTitle.active {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+
+.filterTitle:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.filterTitle:active {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.internships {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-self: center;
+}
+
+.internshipsSelectors {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectorsTitle {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.selectorsForm {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.selectorItem {
+  background: none;
+  border: none;
+
+  margin: 0;
+  padding: 7px 0;
+  width: 200px;
+  background-color: rgba(84, 68, 52, 0.2);
+  border-radius: 10px;
+
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  text-align: center;
+
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 50%;
+}
+
+.selectorItem.salary {
+  width: 250px;
+}
+
+.selectorItem:focus {
+  outline: 2px solid black;
+}
+
+.selectorsSubmit {
+  border: none;
+  margin: 0;
+  padding: 5px 30px;
+  background-color: rgba(84, 68, 52, 0.7);
+  border-radius: 10px;
+
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: rgba(255, 255, 255, 1);
+}
+
+.selectorsSubmit:hover {
+  background-color: rgba(84, 68, 52, 0.5);
+}
+
+.selectorsSubmit:active {
+  background-color: rgba(84, 68, 52, 0.3);
+}
+
+.selectorsReset {
+  border: none;
+  background: none;
+
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: rgb(45, 30, 30);
+}
+
+.internshipsList {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+  justify-content: center;
+}
+
+.noInternships {
+  margin: 25px 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  color: black;
+}
