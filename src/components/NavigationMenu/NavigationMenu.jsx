@@ -43,7 +43,7 @@ export default function NavigationMenu({ onClose }) {
         </li>
         {isAuth && (
           <li>
-            <Link to="" className={styles['menu-link']} onClick={onClose}>
+            <Link to="/chat" className={styles['menu-link']} onClick={onClose}>
               Чат-бот
             </Link>
           </li>

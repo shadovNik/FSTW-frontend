@@ -96,7 +96,8 @@ body {
 
 .horizontalLine {
   width: inherit;
-  border: 2px solid rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 .aboutPartContent {
@@ -137,7 +138,7 @@ body {
   .loginRegister {
     font-size: 10px;
 }
-  
+
   .main.FAQ {
     background-position: center;
     align-items: flex-start;
@@ -153,7 +154,7 @@ body {
   width: 85%;
   gap: 20px;
   }
- 
+
   .aboutPartHeader {
   font-size: 14px;
 }

@@ -15,6 +15,7 @@ import AboutPage from './pages/AboutPage/About';
 import FAQ from './pages/FAQ/FAQ';
 import Admin from './pages/Admin/Admin';
 import Internships from './pages/Internships/Internships';
+import ChatBot from './pages/ChatBot/ChatBot';
 
 export default function App() {
   return (
@@ -99,6 +100,14 @@ export default function App() {
             <ProtectedRoute>
               <EditResume />
             </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/chat"
+          element={
+            // <ProtectedRoute>
+              <ChatBot />
+            // </ProtectedRoute>
           }
         />
 
