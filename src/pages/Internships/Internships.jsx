@@ -137,6 +137,7 @@ export default function Internships() {
                   <option value="Инженерия и производство">Инженерия и производство</option>
                   <option value="Управление и консалтинг">Управление и консалтинг</option>
                   <option value="Технические и сервисные специальности">Технические и сервисные специальности</option>
+                  <option value="Аналитика">Аналитика</option>
                 </select>
                 <select
                   id="workFormat"

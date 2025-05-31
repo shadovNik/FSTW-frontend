@@ -73,9 +73,7 @@ export default function App() {
         <Route
           path="/internships"
           element={
-            <ProtectedRoute>
               <Internships />
-            </ProtectedRoute>
           }
         />
         <Route
@@ -105,9 +103,9 @@ export default function App() {
         <Route
           path="/chat"
           element={
-            // <ProtectedRoute>
+            <ProtectedRoute>
               <ChatBot />
-            // </ProtectedRoute>
+            </ProtectedRoute>
           }
         />
 

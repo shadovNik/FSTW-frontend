@@ -185,66 +185,66 @@ body {
 }
 
 @media (min-width: 360px) and (max-width: 740px) {
+  .main.main-page {
+      max-width: 740px;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      align-items: start;
+      padding-top: 10em;
+  }
 
-  
+  .main-content.main-page {
+    gap: 40px;
+    width: 275px;
+  }
 
-.main.main-page {
-    max-width: 740px;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    align-items: start;
-    padding-top: 10em;
+  .assistant-description {
+    width: 275px;
+    gap: 10px;
+  }
+
+  .assistant.header {
+    font-size: 24px;
+  }
+
+  .assistant.search {
+  margin-top: 13px;
+  }
+
+  .search-input {
+    font-size: 16px;
+  }
+
+  .assistant-description.header {
+    font-size: 20px;
+  }
+
+  .assistant-description.description {
+    font-size: 12px;
+  }
+
+  .logreg-button.log {
+    width: 70px;
+    height: 30px;
+  }
+
+  .logreg-button.reg {
+    width: 120px;
+    height: 30px;
+  }
+
+  .login-register.text {
+    font-size: 12px;
+  }
+
+  .assistant {
+    margin-top: 0px;
+    align-items: center;
+  }
 }
 
-.main-content.main-page {
-  gap: 40px;
-  width: 275px;
-}
-
-.assistant-description {
-  width: 275px;
-  gap: 10px;
-}
-
-.assistant.header {
-  font-size: 24px;
-}
-
-.assistant.search {
-margin-top: 13px;
-}
-
-.search-input {
-  font-size: 16px;
-}
-
-.assistant-description.header {
-  font-size: 20px;
-}
-
-.assistant-description.description {
-  font-size: 12px;
-}
-
-.logreg-button.log {
-  width: 70px;
-  height: 30px;
-}
-
-.logreg-button.reg {
-  width: 120px;
-  height: 30px;
-}
-
-.login-register.text {
-  font-size: 12px;
-}
-
-.assistant {
-  margin-top: 0px;
-  align-items: center;
-}
-
+.internshipsLink {
+  text-decoration: none;
 }

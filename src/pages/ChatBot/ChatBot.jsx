@@ -8,11 +8,28 @@ export default function ChatBot() {
   const chatRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState([]);
+  const [messagesHistory, setMessagesHistory] = useState([]);
   const [inputText, setInputText] = useState("");
 
   useEffect(() => {
-    chatRef.current.scrollTop = chatRef.current.scrollHeight;
-  }, [messages])
+    if (chatRef.current) {
+      chatRef.current.scrollTop = chatRef.current.scrollHeight;
+    }
+  }, [messages, messagesHistory]);
+
+  useEffect(() => {
+    fetchHistory();
+  }, [])
+
+  const fetchHistory = async () => {
+    try {
+      const response = await fetch("http://localhost:80/api/neuronet/resume_chat/history/10/1");
+      const data = await response.json();
+      setMessagesHistory(data.reverse());
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   const handleSendMessage = async () => {
     if (inputText.trim() === "") return;
@@ -42,23 +59,34 @@ export default function ChatBot() {
   };
 
   const parseServerResponse = (text) => {
-  if (!text || typeof text !== "string") return "Произошла ошибка при обработке ответа";
+    if (!text || typeof text !== "string") return "Произошла ошибка при обработке ответа";
 
-  let parsedText = text;
+    let parsedText = text;
 
-  parsedText = parsedText.replace(/^######\s(.+)$/gm, "<h6>$1</h6>");
-  parsedText = parsedText.replace(/^#####\s(.+)$/gm, "<h5>$1</h5>");
-  parsedText = parsedText.replace(/^####\s(.+)$/gm, "<h4>$1</h4>");
-  parsedText = parsedText.replace(/^###\s(.+)$/gm, "<h3>$1</h3>");
-  parsedText = parsedText.replace(/^##\s(.+)$/gm, "<h2>$1</h2>");
-  parsedText = parsedText.replace(/^#\s(.+)$/gm, "<h1>$1</h1>");
-  parsedText = parsedText.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-  parsedText = parsedText.replace(/\*(.*?)\*/g, "<em>$1</em>");
-  parsedText = parsedText.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
-  parsedText = parsedText.replace(/\n/g, "<br>");
+    parsedText = parsedText.replace(/```(?:[^\n]*)?\n([\s\S]*?)```/g, "<pre><code>$1</code></pre>");
+    parsedText = parsedText.replace(/`([^`]+)`/g, "<code>$1</code>");
+    parsedText = parsedText.replace(/^######\s(.+)$/gm, "<h6>$1</h6>");
+    parsedText = parsedText.replace(/^#####\s(.+)$/gm, "<h5>$1</h5>");
+    parsedText = parsedText.replace(/^####\s(.+)$/gm, "<h4>$1</h4>");
+    parsedText = parsedText.replace(/^###\s(.+)$/gm, "<h3>$1</h3>");
+    parsedText = parsedText.replace(/^##\s(.+)$/gm, "<h2>$1</h2>");
+    parsedText = parsedText.replace(/^#\s(.+)$/gm, "<h1>$1</h1>");
+    parsedText = parsedText.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+    parsedText = parsedText.replace(/\*(.*?)\*/g, "<em>$1</em>");
+    parsedText = parsedText.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+    parsedText = parsedText.replace(/\n/g, "<br>");
+    parsedText = parsedText.replace(/"/g, "");
 
-  return parsedText || "Ответ пустой";
-};
+    return parsedText || "Ответ пустой";
+  };
+
+  const decodeEscapedString = (text) => {
+    if (!text || typeof text !== "string") return text;
+    return text
+      .replace(/\\n/g, "\n")
+      .replace(/\\"/g, '"')
+      .replace(/\\\\/g, "\\");
+  };
 
   return (
     <>
@@ -79,12 +107,29 @@ export default function ChatBot() {
           <div className="chatBot-title">
             {/* <div className="avatarka"></div> */}
             <div className="chatBot-name">
-              <p className="chatBot-name--header">Карьерный ассистент по резюме</p>
-              <p className="chatBot-name--extra">Помогает с резюме</p>
+              <p className="chatBot-name--header">AI-ассистент</p>
+              <p className="chatBot-name--extra">Помогает с различными вопросами в IT-индустрии</p>
             </div>
           </div>
           <div className="horizontalLine"></div>
           <div className="chatBot-history" ref={chatRef}>
+            {messagesHistory.map((message) => (
+              <>
+                {message.userMessage && (
+                  <div className="message user-message">
+                    {parseServerResponse(message.userMessage)}
+                  </div>
+                )}
+                {message.botMessage && (
+                  <div className="message bot-message">
+                    <p
+                      className="responsedMessage"
+                      dangerouslySetInnerHTML={{ __html: parseServerResponse(decodeEscapedString(message.botMessage)) }}
+                    />
+                  </div>
+                )}
+              </>
+            ))}
             {messages.map((message, index) => (
               <div
                 key={index}

@@ -96,6 +96,7 @@ body {
   line-height: 100%;
   border-radius: 15px;
   max-width: inherit;
+  white-space: pre-line;
 }
 
 .message.user-message {
@@ -106,9 +107,10 @@ body {
 }
 
 .message.bot-message {
+  white-space: pre-line;
   margin: 0;
   align-self: flex-start;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(245, 231, 206, 1);
   border-bottom-left-radius: 0;
   color: rgba(0, 0, 0, 1);
 }
@@ -122,6 +124,19 @@ body {
 }
 .message a:active {
   color: rgba(0, 96, 199, 0.4);
+}
+.bot-message pre {
+  background: #d2bfa1;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: monospace;
+  margin: 1px 0;
+}
+.bot-message code {
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
 }
 .bot-message h1 {
   font-size: 1.5em;

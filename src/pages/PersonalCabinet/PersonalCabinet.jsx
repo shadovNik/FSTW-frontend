@@ -105,10 +105,10 @@ export default function PersonalCabinet() {
                 </div>
               </div>
               <div className="person-about">
-                <div className="person-about item">
+                {/* <div className="person-about item">
                   <p className="item-name">Email</p>
                   <p className="item-description"></p>
-                </div>
+                </div> */}
                 <div className="person-about item">
                   <p className="item-name">Телефон</p>
                   <p className="item-description" id="phoneNumber"></p>

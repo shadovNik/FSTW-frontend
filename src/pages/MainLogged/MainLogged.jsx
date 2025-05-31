@@ -21,9 +21,11 @@ export default function MainLogged() {
         <div className={`${styles.mainContent} ${styles.mainLogged}`}>
           <div className={styles.assistant}>
             <p className={`${styles.assistantHeader}`}>IT-Стажировки | AI</p>
-            <div className={styles.assistantSearch}>
-              <p className={styles.searchInput}>Ищи стажировку здесь</p>
-            </div>
+            <Link to="/internships" className='internshipsLink'>
+              <div className={styles.assistantSearch}>
+                  <p className={styles.searchInput}>Ищи стажировку здесь</p>
+              </div>
+            </Link>
           </div>
           <div className={styles.assistantDescription}>
             <p className={`${styles.assistantDescriptionHeader}`}>
