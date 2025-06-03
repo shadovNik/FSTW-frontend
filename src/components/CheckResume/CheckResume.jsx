@@ -7,6 +7,11 @@ export default function CheckResume({ resumeID }) {
   const [resumeData, setResumeData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const onCheckButtonClick = (evt) => {
+    evt.preventDefault();
+    navigate(`/resumeсhat/${resumeID}`)
+  }
+
   const onBackButtonClick = () => {
     navigate('/pc');
   };
@@ -187,7 +192,9 @@ export default function CheckResume({ resumeID }) {
       <div className="checkResumeButtons">
         <button className="checkResumeButton" onClick={onBackButtonClick}>Назад</button>
         <button className="checkResumeButton" onClick={onDownloadButtonClick}>Скачать в PDF</button>
-        <button className="checkResumeButton">Отправить на проверку</button>
+        <button className="checkResumeButton"
+          onClick={(evt) => onCheckButtonClick(evt)}
+        >Отправить на проверку</button>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
-import "./ChatBot.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { useEffect, useRef, useState } from "react";
 
-export default function ChatBot() {
+export default function ResumeChat() {
+  const { id } = useParams();
   const chatRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -22,7 +22,7 @@ export default function ChatBot() {
 
   const fetchHistory = async () => {
     try {
-      const response = await fetch("http://localhost:80/api/neuronet/default_chat/history/1000/1");
+      const response = await fetch("http://localhost:80/api/neuronet/resume_chat/history/1000/1");
       const data = await response.json();
       setMessagesHistory(data.reverse());
     } catch (err) {
@@ -39,7 +39,7 @@ export default function ChatBot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:80/api/neuronet/default_chat/send", {
+      const response = await fetch(`http://localhost:80/api/neuronet/resume_chat/send/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(inputText),
@@ -157,10 +157,8 @@ export default function ChatBot() {
               <div className="chatBotHelper--container">
                 <h1 className="chatBotHelper--title">Что умеет AI?</h1>
                 <ul className="chatBot--part">
-                  <li className="chatBotHelper--text">Отвечает на вопросы об IT-сфере</li>
-                  <li className="chatBotHelper--text">Проводит тестовое собеседование</li>
-                  <li className="chatBotHelper--text">Составляет план обучения</li>
-                  <li className="chatBotHelper--text">Подсказывает, как стать лучше</li>
+                  <li className="chatBotHelper--text">Анализирует резюме</li>
+                  <li className="chatBotHelper--text">Подсказывает, как сделать резюме лучше</li>
                 </ul>
               </div>
           </div>

@@ -16,6 +16,7 @@ import FAQ from './pages/FAQ/FAQ';
 import Admin from './pages/Admin/Admin';
 import Internships from './pages/Internships/Internships';
 import ChatBot from './pages/ChatBot/ChatBot';
+import ResumeChat from './pages/ResumeChat/ResumeChat';
 
 export default function App() {
   return (
@@ -97,6 +98,14 @@ export default function App() {
           element={
             <ProtectedRoute>
               <EditResume />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/resumeсhat/:id"
+          element={
+            <ProtectedRoute>
+              <ResumeChat />
             </ProtectedRoute>
           }
         />
