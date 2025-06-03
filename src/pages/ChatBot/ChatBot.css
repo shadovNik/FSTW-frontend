@@ -5,9 +5,8 @@ body {
 
 .main.chatBot-main {
   margin: 0;
-  padding: 25px 0;
+  padding: 25px 0 14px;
   display: flex;
-  gap: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -16,53 +15,31 @@ body {
   background-repeat: no-repeat;
 }
 
+.chatBot-mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
 .chatBot-header {
   margin: 0;
   font-family: "Exo 2";
   font-weight: 600;
-  font-size: 48px;
+  font-size: 24px;
   line-height: 100%;
-  color: rgba(0, 0, 0, 1);
+  color: black;
+  text-align: center;
 }
 
 .chatBot {
   padding: 10px 15px;
   width: 900px;
-  min-height: 600px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   background-color: rgba(84, 68, 52, 0.2);
   border-radius: 20px;
-}
-
-.chatBot-title {
-  display: flex;
-  gap: 20px;
-}
-
-.chatBot-name {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.chatBot-name--header {
-  margin: 0;
-  font-family: "Exo 2";
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 100%;
-  color: rgba(0, 0, 0, 1);
-}
-
-.chatBot-name--extra {
-  margin: 0;
-  font-family: "Exo 2";
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 100%;
-  color: rgba(0, 0, 0, 0.5);
 }
 
 .chatBot-history {
@@ -72,7 +49,7 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 
   scrollbar-width: thin;
   scrollbar-color: rgba(228, 186, 152, 0.7) rgba(0, 0, 0, 0.2);
@@ -92,7 +69,7 @@ body {
   padding: 10px;
   font-family: "Exo 2";
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 100%;
   border-radius: 15px;
   max-width: inherit;
@@ -110,7 +87,7 @@ body {
   white-space: pre-line;
   margin: 0;
   align-self: flex-start;
-  background-color: rgba(245, 231, 206, 1);
+  background-color: rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 0;
   color: rgba(0, 0, 0, 1);
 }
@@ -248,4 +225,48 @@ body {
 
 .chatBot-inputButton:active {
   background-color: rgba(84, 68, 52, 0.7);
+}
+
+.chatBotHelp {
+  position: absolute;
+  left: 10px;
+  top: 105px;
+  padding: 10px 15px;
+  width: 224px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 15px;
+  background-color: #54443433;
+}
+
+.chatBotHelper--container {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatBot--part {
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatBotHelper--title {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.chatBotHelper--text {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
 }

@@ -1,7 +1,6 @@
 import "./ChatBot.css";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import { useEffect, useRef, useState } from "react";
 
 export default function ChatBot() {
@@ -102,66 +101,71 @@ export default function ChatBot() {
         }
       />
       <main className="main chatBot-main">
-        <p className="chatBot-header">IT-Стажировки | AI</p>
-        <div className="chatBot">
-          <div className="chatBot-title">
-            {/* <div className="avatarka"></div> */}
-            <div className="chatBot-name">
-              <p className="chatBot-name--header">AI-ассистент</p>
-              <p className="chatBot-name--extra">Помогает с различными вопросами в IT-индустрии</p>
+        <div className="chatBot-mainContent">
+          <p className="chatBot-header">IT-Стажировки | AI</p>
+          <div className="horizontalLine"></div>
+          <div className="chatBot">
+            <div className="chatBot-history" ref={chatRef}>
+              {messagesHistory.map((message) => (
+                <>
+                  {message.userMessage && (
+                    <div className="message user-message">
+                      {parseServerResponse(message.userMessage)}
+                    </div>
+                  )}
+                  {message.botMessage && (
+                    <div className="message bot-message">
+                      <p
+                        className="responsedMessage"
+                        dangerouslySetInnerHTML={{ __html: parseServerResponse(decodeEscapedString(message.botMessage)) }}
+                      />
+                    </div>
+                  )}
+                </>
+              ))}
+              {messages.map((message, index) => (
+                <div
+                  key={index}
+                  className={`message ${message.sender === "user" ? "user-message" : "bot-message"}`}
+                >
+                  {message.sender === "user" ? (
+                    message.text
+                  ) : (
+                    <p className="responsedMessage" dangerouslySetInnerHTML={{ __html: message.text }} />
+                  )}
+                </div>
+              ))}
+              {isLoading && (
+                <div className="message bot-message loading">
+                  Загрузка<span className="dots"></span>
+                </div>
+              )}
+            </div>
+            <div className="chatBot-inputContainer">
+              <input type="textarea"
+                className="chatBot-input"
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
+                placeholder="Задайте мне вопрос!"
+                disabled={isLoading}
+              />
+              <button className="chatBot-inputButton" onClick={handleSendMessage}><i class='fa fa-send fa-lg' /></button>
             </div>
           </div>
-          <div className="horizontalLine"></div>
-          <div className="chatBot-history" ref={chatRef}>
-            {messagesHistory.map((message) => (
-              <>
-                {message.userMessage && (
-                  <div className="message user-message">
-                    {parseServerResponse(message.userMessage)}
-                  </div>
-                )}
-                {message.botMessage && (
-                  <div className="message bot-message">
-                    <p
-                      className="responsedMessage"
-                      dangerouslySetInnerHTML={{ __html: parseServerResponse(decodeEscapedString(message.botMessage)) }}
-                    />
-                  </div>
-                )}
-              </>
-            ))}
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`message ${message.sender === "user" ? "user-message" : "bot-message"}`}
-              >
-                {message.sender === "user" ? (
-                  message.text
-                ) : (
-                  <p className="responsedMessage" dangerouslySetInnerHTML={{ __html: message.text }} />
-                )}
+          <div className="chatBotHelp">
+              <div className="chatBotHelper--container">
+                <h1 className="chatBotHelper--title">Что умеет AI?</h1>
+                <ul className="chatBot--part">
+                  <li className="chatBotHelper--text">Отвечает на вопросы об IT-сфере</li>
+                  <li className="chatBotHelper--text">Проводит тестовое собеседование</li>
+                  <li className="chatBotHelper--text">Составляет план обучения</li>
+                  <li className="chatBotHelper--text">Подсказывает, как стать лучше</li>
+                </ul>
               </div>
-            ))}
-            {isLoading && (
-              <div className="message bot-message loading">
-                Загрузка<span className="dots"></span>
-              </div>
-            )}
-          </div>
-          <div className="chatBot-inputContainer">
-            <input type="textarea"
-              className="chatBot-input"
-              value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-              placeholder="Задайте мне вопрос!"
-              disabled={isLoading}
-            />
-            <button className="chatBot-inputButton" onClick={handleSendMessage}><i class='fa fa-send fa-lg' /></button>
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
