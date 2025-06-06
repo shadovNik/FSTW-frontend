@@ -194,7 +194,7 @@ export default function CheckResume({ resumeID }) {
         <button className="checkResumeButton" onClick={onDownloadButtonClick}>Скачать в PDF</button>
         <button className="checkResumeButton"
           onClick={(evt) => onCheckButtonClick(evt)}
-        >Отправить на проверку</button>
+        >Анализ при помощи ИИ</button>
       </div>
     </div>
   );

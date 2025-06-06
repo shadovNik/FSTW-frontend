@@ -25,13 +25,13 @@
   height: 10px;
 }
 
-.progress-bar {
-  gap: 4px;
-  position: fixed;
-  bottom: 65px;
-  left: 0;
-  width: 93%;
-  height: 10px;
-}
+    .progress-bar {
+        gap: 4px;
+        position: absolute;
+        bottom: 65px;
+        left: 0;
+        width: 100%;
+        bottom: -30px;
+    }
 
 }

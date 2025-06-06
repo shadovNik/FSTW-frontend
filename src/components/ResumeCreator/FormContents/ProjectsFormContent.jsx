@@ -34,9 +34,9 @@ export default function ProjectsFormContent({ content }) {
               value={block.title}
               onChange={(e) => handleInputChange(index, "title", e.target.value)}
             />
-            <input
+            <textarea
               type="text"
-              className="partContentInput"
+              className="partContentInput textArea"
               id={`description-${block.id}`}
               name="description"
               placeholder="Краткое описание проекта"
