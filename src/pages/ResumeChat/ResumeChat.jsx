@@ -22,7 +22,7 @@ export default function ResumeChat() {
 
   const fetchHistory = async () => {
     try {
-      const response = await fetch("http://localhost:80/api/neuronet/resume_chat/history/1000/1");
+      const response = await fetch(`http://localhost:80/api/neuronet/resume_chat/${id}/history/1000/1`);
       const data = await response.json();
       setMessagesHistory(data.reverse());
     } catch (err) {
