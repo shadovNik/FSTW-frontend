@@ -12,7 +12,7 @@ export default async function educationSubmit(evt, onSuccess) {
 
   try {
     const response = await fetch(
-      `http://localhost:80/api/api/resume_editor/achievements/${localStorage.getItem("resumeID")}`,
+      `/api/api/resume_editor/achievements/${localStorage.getItem("resumeID")}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -5,7 +5,7 @@ export default async function skillsSubmit(evt, onSuccess) {
 
   try {
     const response = await fetch(
-      `http://localhost:80/api/api/resume_editor/skills/${localStorage.getItem("resumeID")}`,
+      `/api/api/resume_editor/skills/${localStorage.getItem("resumeID")}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

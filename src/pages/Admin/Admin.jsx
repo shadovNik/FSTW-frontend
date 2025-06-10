@@ -15,7 +15,7 @@ export default function Admin() {
   const fetchVacancies = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:80/api/admin/all_internships?filterParam=${filter}`);
+      const response = await fetch(`/api/admin/all_internships?filterParam=${filter}`);
       const data = await response.json();
       if (response.ok) {
         setVacancies(data);
@@ -59,7 +59,7 @@ export default function Admin() {
     });
 
     try {
-      const response = await fetch("http://localhost:80/api/admin/create", {
+      const response = await fetch("/api/admin/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(object),
@@ -78,7 +78,7 @@ export default function Admin() {
 
   const onDeleteButtonClick = async (id) => {
     try {
-      const response = await fetch(`http://localhost:80/api/admin/internship/${id}/remove`, {
+      const response = await fetch(`/api/admin/internship/${id}/remove`, {
         method: "DELETE",
       });
 
@@ -98,7 +98,7 @@ export default function Admin() {
   const onSaveEdit = async (id) => {
     console.log(editedVacancy);
     try {
-      const response = await fetch(`http://localhost:80/api/admin/edit_internship/${id}`, {
+      const response = await fetch(`/api/admin/edit_internship/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(editedVacancy),
@@ -119,8 +119,8 @@ export default function Admin() {
 
   const onArchiveButtonClick = async (id, isArchive) => {
     const url = isArchive
-      ? `http://localhost:80/api/admin/internship/${id}/unarchive`
-      : `http://localhost:80/api/admin/internship/${id}/archive`;
+      ? `/api/admin/internship/${id}/unarchive`
+      : `/api/admin/internship/${id}/archive`;
 
     try {
       const response = await fetch(url, {
@@ -153,7 +153,7 @@ export default function Admin() {
 
   const onAddHHButtonClick = async () => {
     setHHLoading(true);
-    const response = await fetch("http://localhost:80/api/admin/hh", {
+    const response = await fetch("/api/admin/hh", {
       method: "POST",
     });
     if (response.ok) {

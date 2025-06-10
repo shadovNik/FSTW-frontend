@@ -27,7 +27,7 @@ export default function PersonalCabinet() {
 
     async function fetchResumeId() {
       try {
-        const response = await fetch('http://localhost:80/api/api/resume_editor/init', {
+        const response = await fetch('/api/api/resume_editor/init', {
           method: 'POST',
         });
 
@@ -51,7 +51,7 @@ export default function PersonalCabinet() {
 
   const getResumesInfo = async () => {
     try {
-      const response = await fetch("http://localhost:80/api/api/resume_editor/all_user_resumes", {
+      const response = await fetch("/api/api/resume_editor/all_user_resumes", {
           headers: { "Content-Type": "application/json" },
         }
       );

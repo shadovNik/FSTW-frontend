@@ -4,11 +4,11 @@ export default function Heart({ intshipID, isLiked, toggleHeart }) {
   const heartCheck = {
     liked: {
       method: 'POST',
-      url: `http://localhost:80/api/internship/add_favorite/${intshipID}`,
+      url: `/api/internship/add_favorite/${intshipID}`,
     },
     notLiked: {
       method: 'DELETE',
-      url: `http://localhost:80/api/internship/remove_favorite/${intshipID}`,
+      url: `/api/internship/remove_favorite/${intshipID}`,
     },
   };
 

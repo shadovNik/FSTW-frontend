@@ -20,7 +20,7 @@ export default function CheckResume({ resumeID }) {
   evt.preventDefault();
 
   try {
-    const response = await fetch(`http://localhost:80/api/api/resume_editor/downland/${resumeID}`);
+    const response = await fetch(`/api/api/resume_editor/downland/${resumeID}`);
 
     if (!response.ok) {
       console.error('Что-то пошло не так');
@@ -44,7 +44,7 @@ export default function CheckResume({ resumeID }) {
 
   async function loadResumeData() {
     try {
-      const response = await fetch(`http://localhost:80/api/api/resume_editor/all_info/${resumeID}`);
+      const response = await fetch(`/api/api/resume_editor/all_info/${resumeID}`);
       const data = await response.json();
       setResumeData(data);
     } catch (error) {

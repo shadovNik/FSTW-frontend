@@ -22,9 +22,9 @@ export default function Internships() {
     const params = {};
 
     const urlMap = {
-      search: "http://localhost:80/api/internship",
-      forYou: "http://localhost:80/api/internship/personal",
-      favorites: "http://localhost:80/api/internship/favorite",
+      search: "/api/internship",
+      forYou: "/api/internship/personal",
+      favorites: "/api/internship/favorite",
     }
     const baseUrl = urlMap[activeFilter] || baseUrl;
 

@@ -15,7 +15,7 @@ export default function Login() {
     const formData = new FormData(evt.target);
 
     try {
-      const response = await fetch('http://localhost:80/api/login', {
+      const response = await fetch('/api/login', {
         method: 'POST',
         body: formData,
       });

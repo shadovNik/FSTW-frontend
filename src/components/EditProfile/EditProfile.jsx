@@ -27,7 +27,7 @@ export default function EditProfile({ onClose }) {
     const formData = new FormData(evt.target);
 
     try {
-      const response = await fetch('http://localhost:80/api/api/personal_cabinet/send_info', {
+      const response = await fetch('/api/api/personal_cabinet/send_info', {
         method: "POST",
         body: formData,
       });

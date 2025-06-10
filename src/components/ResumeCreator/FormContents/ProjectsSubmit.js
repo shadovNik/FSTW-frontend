@@ -17,7 +17,7 @@ export default async function projectsSubmit(evt, onSuccess) {
 
   try {
     const response = await fetch(
-      `http://localhost:80/api/api/resume_editor/projects/${localStorage.getItem("resumeID")}`,
+      `/api/api/resume_editor/projects/${localStorage.getItem("resumeID")}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

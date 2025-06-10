@@ -76,7 +76,7 @@ export default function EditResume() {
     result.achievements = achievements;
 
     try {
-      const response = await fetch(`http://localhost:80/api/api/resume_editor/change_resume/${id}`, {
+      const response = await fetch(`/api/api/resume_editor/change_resume/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(result),
@@ -95,7 +95,7 @@ export default function EditResume() {
   useEffect(() => {
     const fetchEdit = async () => {
       try {
-        const response = await fetch(`http://localhost:80/api/api/resume_editor/only_resume_info/${id}`);
+        const response = await fetch(`/api/api/resume_editor/only_resume_info/${id}`);
 
         const data = await response.json();
         if (response.ok) {

@@ -13,7 +13,7 @@ export default function Registration() {
     const formData = new FormData(evt.target);
 
     try {
-      const response = await fetch('http://localhost:80/api/register', {
+      const response = await fetch('/api/register', {
         method: 'POST',
         body: formData,
       });

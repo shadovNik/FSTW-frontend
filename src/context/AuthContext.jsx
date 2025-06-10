@@ -26,7 +26,7 @@ export function AuthProvider ({ children }) {
   }
 
   async function logoutFetch() {
-    const response = await fetch('http://localhost:80/api/logout', {
+    const response = await fetch('/api/logout', {
       method: "POST",
     });
 

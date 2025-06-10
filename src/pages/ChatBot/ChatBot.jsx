@@ -22,7 +22,7 @@ export default function ChatBot() {
 
   const fetchHistory = async () => {
     try {
-      const response = await fetch("http://localhost:80/api/neuronet/default_chat/history/1000/1");
+      const response = await fetch("/api/neuronet/default_chat/history/1000/1");
       const data = await response.json();
       setMessagesHistory(data.reverse());
     } catch (err) {
@@ -39,7 +39,7 @@ export default function ChatBot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:80/api/neuronet/default_chat/send", {
+      const response = await fetch("/api/neuronet/default_chat/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(inputText),
