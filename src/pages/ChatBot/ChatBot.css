@@ -274,32 +274,30 @@ body {
 
 
 @media (min-width: 360px) and (max-width: 740px) {
-
   .chatBot {
-  margin: auto;
-  width: 90%;
-  min-height: 80%;
-  align-items: center;
-}
+    margin: auto;
+    width: 90%;
+    min-height: 80%;
+    align-items: center;
+  }
 
-.chatBotHelp {
-  width: 90%;
-  align-items: center;
-  position: static;
-}
+  .chatBotHelp {
+    width: 90%;
+    align-items: center;
+    position: static;
+  }
 
-.message {
-  font-size: 14px;
-}
+  .message {
+    font-size: 14px;
+  }
 
-.main.chatBot-main {
-  height: 112vh;
-  justify-content: start;
-}
+  .main.chatBot-main {
+    height: 112vh;
+    justify-content: start;
+  }
 
-.chatBot-mainContent {
-  margin-top: 5px;
-  gap: 10px;
-}
-
+  .chatBot-mainContent {
+    margin-top: 5px;
+    gap: 10px;
+  }
 }

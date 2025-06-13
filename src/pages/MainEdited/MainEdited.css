@@ -1,0 +1,191 @@
+.Header.mainEdited {
+  padding: 18px 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(17, 24, 39, 1);
+}
+
+.fstwLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.loginRegisters {
+  display: flex;
+  gap: 34px;
+}
+
+.logregHref {
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginRegisters.texts {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 10%;
+
+  color: rgba(255, 255, 255, 1);
+}
+
+.loginRegisters.texts:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.loginRegisters.texts:active {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.mainEdited {
+  display: flex;
+  flex-direction: column;
+}
+
+.contentHeader {
+  padding: 15px 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: rgba(17, 24, 39, 1);
+}
+
+.contentHeader--text {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 100%;
+  color: white;
+}
+
+.internshipsLinkEdited {
+  text-decoration: none;
+}
+
+.assistantSearch {
+  width: 242px;
+  height: 40px;
+  padding: 8px 16px;
+  background-color: rgba(0, 127, 190, 1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assistantSearch:hover {
+  background-color: rgba(0, 127, 190, 0.7);
+}
+
+.assistantSearch:active {
+  background-color: rgba(0, 127, 190, 0.4);
+}
+
+.searchInputs {
+  margin: 0;
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: white;
+}
+
+.editedContent {
+  padding: 30px 55px 94px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.editedContent--block {
+  max-width: 630px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.editedContent--block.second {
+  margin-right: 25px;
+}
+
+.verticalLine {
+  border: 1px solid rgba(17, 24, 39, 1);
+}
+
+.editedContent--header {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.editedContent--text {
+  margin: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 100%;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.editedFooter {
+  height: auto;
+  padding: 12px 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(17, 24, 39, 1);
+}
+
+.footer-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 34px;
+}
+
+.content-link {
+  text-decoration: none;
+}
+
+.content-text {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 10%;
+  color: white;
+}
+
+.content-text:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.content-text:active {
+  color: rgba(255, 255, 255, 0.4);
+}

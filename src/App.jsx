@@ -17,6 +17,7 @@ import Admin from './pages/Admin/Admin';
 import Internships from './pages/Internships/Internships';
 import ChatBot from './pages/ChatBot/ChatBot';
 import ResumeChat from './pages/ResumeChat/ResumeChat';
+import MainEdited from './pages/MainEdited/MainEdited';
 
 export default function App() {
   return (
@@ -35,6 +36,14 @@ export default function App() {
           element={
             <PublicRoute>
               <MainPage />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/mainEdited"
+          element={
+            <PublicRoute>
+              <MainEdited />
             </PublicRoute>
           }
         />

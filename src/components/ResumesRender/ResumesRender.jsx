@@ -16,7 +16,7 @@ export default function ResumesRender({ resumesInfo, resumesQuantity, onDelete }
     }
 
     try {
-      const response = await fetch(`http://localhost:80/api/api/resume_editor/remove/${resumeID}`, {
+      const response = await fetch(`/api/api/resume_editor/remove/${resumeID}`, {
         method: "DELETE",
       });
 
