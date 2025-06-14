@@ -150,7 +150,7 @@ export default function ChatBot() {
                 placeholder="Задайте мне вопрос!"
                 disabled={isLoading}
               />
-              <button className="chatBot-inputButton" onClick={handleSendMessage}><i class='fa fa-send fa-lg' /></button>
+              <button className="chatBot-inputButton" onClick={handleSendMessage}><i class="fa fa-send fa-lg"></i></button>
             </div>
           </div>
           <div className="chatBotHelp">

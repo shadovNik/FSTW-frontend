@@ -277,7 +277,6 @@ body {
   .chatBot {
     margin: auto;
     width: 90%;
-    min-height: 80%;
     align-items: center;
   }
 
