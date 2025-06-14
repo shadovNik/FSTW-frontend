@@ -292,7 +292,7 @@ body {
   }
 
   .main.chatBot-main {
-    height: 112vh;
+    min-height: 100vh;
     justify-content: start;
   }
 

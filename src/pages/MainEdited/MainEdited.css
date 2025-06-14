@@ -189,3 +189,101 @@
 .content-text:active {
   color: rgba(255, 255, 255, 0.4);
 }
+
+@media (min-width: 360px) and (max-width: 740px) {
+  
+  .Header.mainEdited {
+    padding: 12px 20px;
+  }
+
+  .fstwLogo img {
+    width: 120px;
+    height: 40px;
+  }
+
+  .loginRegisters {
+    gap: 20px;
+  }
+
+  .loginRegisters.texts {
+    font-size: 16px;
+  }
+
+  .contentHeader {
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .contentHeader--text {
+    font-size: 28px;
+  }
+
+  .assistantSearch {
+    width: 200px;
+    height: 36px;
+  }
+
+  .searchInputs {
+    font-size: 16px;
+  }
+
+  .editedContent {
+    padding: 20px;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 67vh;
+  }
+
+  .editedContent--block {
+    max-width: 100%;
+    gap: 15px;
+  }
+
+  .editedContent--block.second {
+    margin-right: 0;
+  }
+
+  .verticalLine {
+    display: none;
+  }
+
+  .editedContent--header {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .editedContent--text {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .editedFooter {
+    padding: 12px 20px;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center;
+    gap: 15px; 
+  }
+
+  .footer-content {
+    flex-direction: row;
+    gap: 20px; 
+    flex-wrap: wrap; 
+  }
+
+  .footer-content:last-child {
+    margin-top: 0; 
+    gap: 15px; 
+  }
+
+  .footer-content:last-child img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-content:last-child img:last-child {
+    width: 100px;
+    height: auto;
+  }
+}
